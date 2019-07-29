@@ -20,3 +20,8 @@ pie ; returns 3
   (string-append flavor "jello"))
 
 (nobake "green")
+
+;; indentation note - racket lets you know you've left something out by indenting severely when you have forgotten a parenthesis
+
+(define (halfbake flavor
+                  (string-append flavor "creme brulee"))
