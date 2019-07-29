@@ -83,3 +83,10 @@ pie ; returns 3
 (reply "hello racket")
 (reply "this is a test to see if this won't work")
 
+; same, without repeating "huh?"
+(define (reply s)
+  (if (if (string? s)
+          (equal? "hello" (substring s 0 5))
+          #f)
+      "hi!"
+      "huh?"))
