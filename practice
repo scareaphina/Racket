@@ -1,3 +1,14 @@
+#lang racket
+
+;; simple definitions and expressions
+
+(define pie 3) ; defines pie to be 3
+(define (piece str) ;defines piece as a function of one argument
+  (substring str 0 pie))
+
+pie ; returns 3
+(piece "key lime") ; returns "key"
+
 (define (bake flavor)
   (printf "preheating oven...\n")
   (string-append flavor " pie"))
