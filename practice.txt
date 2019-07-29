@@ -168,8 +168,17 @@ pie ; returns 3
 (twice (make-add-suffix "?!") "hello")
 (twice (make-add-suffix "...") "hello")
 
+; returns #<procedure:...nts/SICP/1.1.rkt:8:0>
+; "hello!!"
+; "hello?!?!"
+; "hello!!"
+; "hello?!?!"
+; "hello......"
+
 (define louder
   (lambda (s)
     (string-append s "!")))
 
 louder
+
+; returns #<procedure:louder>
