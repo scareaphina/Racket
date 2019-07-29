@@ -127,3 +127,23 @@ pie ; returns 3
 (reply-more "goodbye cruel world")
 (reply-more "what is your favorite color?")
 (reply-more "mine is lime green")
+
+; more function calls
+
+(define (double v)
+  ((if (string? v) string-append +) v v))
+
+(double "mnah")
+(double 5)
+
+; define and use twice
+
+(define (twice f v)
+  (f (f v)))
+
+(twice sqrt 16)
+
+(define (louder s)
+  (string-append s "!"))
+
+(twice louder "hello")
