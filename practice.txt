@@ -147,3 +147,29 @@ pie ; returns 3
   (string-append s "!"))
 
 (twice louder "hello")
+
+; lambda
+
+(define (twice f v)
+  (f (f v)))
+
+(lambda (s) (string-append s "!"))
+
+(twice (lambda (s) (string-append s "!"))
+       "hello")
+
+(twice (lambda (s) (string-append s "?!"))
+       "hello")
+
+(define (make-add-suffix s2)
+  (lambda (s) (string-append s s2)))
+
+(twice (make-add-suffix "!") "hello")
+(twice (make-add-suffix "?!") "hello")
+(twice (make-add-suffix "...") "hello")
+
+(define louder
+  (lambda (s)
+    (string-append s "!")))
+
+louder
