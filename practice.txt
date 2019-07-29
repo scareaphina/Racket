@@ -25,3 +25,35 @@ pie ; returns 3
 
 (define (halfbake flavor
                   (string-append flavor "creme brulee"))
+
+(string-append "rope" "twine" "yarn") ; append strings
+
+(substring "corduroys" 0 4) ; extract a substring
+
+(string-length "shoelace") ; get a string's length
+
+(string? "Ceci n'est pas une string.") ; recognize strings
+
+(string? 1)
+
+(sqrt 16) ; find a square root
+
+(sqrt -16)
+
+(+ 1 2) ; add numbers
+
+(- 2 1) ; subtract numbers
+
+> (< 2 1) ; compare numbers
+
+> (>= 2 1)
+
+(number? "c'est une number") ; recognize numbers
+
+(number? 1)
+
+(equal? 6 "half dozen") ; compare anything
+
+(equal? 6 6)
+
+(equal? "half dozen" "half dozen")
