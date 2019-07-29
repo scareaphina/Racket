@@ -57,3 +57,29 @@ pie ; returns 3
 (equal? 6 6)
 
 (equal? "half dozen" "half dozen")
+
+
+; if expression evaluates the first <expr> and then, if that is not true, evaluates the second and prints the result
+
+(if (< 2 3) 
+    "bigger"
+    "smaller")
+
+(if (< 34 3)
+    "bigger"
+    "smaller")
+
+(if (< .2 .52)
+    "bigger"
+    "smaller")
+
+(define (reply s)
+  (if (string? s)
+      (if (equal? "hello" (substring s 0 5))
+          "hi!"
+          "huh?")
+      "huh?"))
+
+(reply "hello racket")
+(reply "this is a test to see if this won't work")
+
