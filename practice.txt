@@ -90,3 +90,40 @@ pie ; returns 3
           #f)
       "hi!"
       "huh?"))
+
+(define (reply s)
+  (if (and (string? s)
+           (>= (string-length s) 5)
+           (equal? "hello" (substring s 0 5)))
+      "hi!"
+      "huh?"))
+
+(reply "hello racket")
+(reply "22")
+
+; nested ifs
+(define (reply-more s)
+  (if (equal? "hello" (substring s 0 5))
+      "hi!"
+      (if (equal? "goodbye" (substring s 0 7))
+          "bye!"
+          (if (equal? "?" (substring s (- (string-length s) 1)))
+              "I don't know"
+              "huh?"))))
+ 
+; cond
+
+(define (reply-more s)
+  (cond
+    [(equal? "hello" (substring s 0 5))
+     "hi!"]
+    [(equal? "goodbye" (substring s 0 7))
+     "bye!"]
+    [(equal? "?" (substring s (- (string-length s) 1)))
+     "I don't know"]
+    [else "huh?"]))
+
+(reply-more "hello racket")
+(reply-more "goodbye cruel world")
+(reply-more "what is your favorite color?")
+(reply-more "mine is lime green")
