@@ -1,0 +1,11 @@
+(define (bake flavor)
+  (printf "preheating oven...\n")
+  (string-append flavor " pie"))
+
+(bake "apple")
+
+(define (nobake flavor)
+  (printf "mixing packet...\n")
+  (string-append flavor "jello"))
+
+(nobake "green")
