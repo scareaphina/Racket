@@ -81,3 +81,51 @@
 (pigl 'aghettisp)
 
 (every pigl '(the ballad of john and yoko))
+
+;;;;;;
+; simple racket program for menu population
+
+(define (choices menu)
+  (if (null? menu)
+      '(())
+      (let ((smaller (choices (cdr menu))))
+        (reduce append
+                (map (lambda (item) (prepend-every item smaller))
+                     (car menu))))))
+
+(define (prepend-every item 1st)
+  (map (lambda (choice) (se item choice)) 1st))
+
+(choices '((small medium large)
+           (vanilla (ultra chocolate) (rum raisin) ginger)
+           (cone cup)))
+           
+;result:
+'((small vanilla cone)
+  (small vanilla cup)
+  (small ultra chocolate cone)
+  (small ultra chocolate cup)
+  (small rum raisin cone)
+  (small rum raisin cup)
+  (small ginger cone)
+  (small ginger cup)
+  (medium vanilla cone)
+  (medium vanilla cup)
+  (medium ultra chocolate cone)
+  (medium ultra chocolate cup)
+  (medium rum raisin cone)
+  (medium rum raisin cup)
+  (medium ginger cone)
+  (medium ginger cup)
+  (large vanilla cone)
+  (large vanilla cup)
+  (large ultra chocolate cone)
+  (large ultra chocolate cup)
+  (large rum raisin cone)
+  (large rum raisin cup)
+  (large ginger cone)
+  (large ginger cup))
+  
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  
+  
