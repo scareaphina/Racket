@@ -1,3 +1,5 @@
+#lang simply-scheme
+
 ; lambda
 
 (define (add-three number)
@@ -51,3 +53,31 @@
 (real-word? 'of)
 
 (keep real-word? '(united network command for law and enforcement))
+
+(define (pigl wd)
+  (if (member? (first wd) 'aeiou)
+      (word wd 'ay)
+      (pigl (word (butfirst wd) (first wd)))))
+
+(pigl 'spaghetti)
+
+(pigl 'ok)
+
+(pigl 'elphant)
+
+(first 'spaghetti)
+
+(butfirst 'spaghetti)
+
+(word 'paghetti 's)
+
+(define (rotate wd)
+  (word (butfirst wd) (first wd)))
+
+(rotate 'spaghetti)
+
+(rotate 'paghettis)
+
+(pigl 'aghettisp)
+
+(every pigl '(the ballad of john and yoko))
