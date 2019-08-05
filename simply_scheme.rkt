@@ -14,3 +14,7 @@
   (every (lambda (number) (+ number 3)) sent))
 
 (add-three-to-each (1 9 9 2))
+
+((lambda (a b) (+ (* 2 a) b)) 5 6)
+
+((lambda (wd) (word (last wd) (first wd))) 'impish)
