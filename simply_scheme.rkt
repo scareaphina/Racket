@@ -141,3 +141,19 @@
 (combinations 3 '(a b c d e))
 
 (combinations 2 '(john paul george ringo))
+
+;;;;;;;;;;;;;;;;;;
+
+(define (factorial n)
+  (if (= n 0)
+      1
+      (* n (factorial (- n 1)))))
+
+(factorial 4)
+
+(factorial 1000)
+
+(factorial 400)
+
+;;;;;;;;;;;;;;;;;;
+
