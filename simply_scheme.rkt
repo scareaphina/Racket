@@ -33,3 +33,21 @@
 (accumulate word '(a c l u))
 
 (acronym '(united states of america))
+
+(define (acronym phrase)
+  (accumulate word (every first (keep real-word? phrase))))
+
+(define (real-word? wd)
+  (not (member? wd '(a the an in of and for to with))))
+
+(acronym '(united states of america))
+
+(acronym '(structure and interpretation of computer programs))
+
+(acronym '(association for computing machinery))
+
+(real-word? 'structure)
+
+(real-word? 'of)
+
+(keep real-word? '(united network command for law and enforcement))
