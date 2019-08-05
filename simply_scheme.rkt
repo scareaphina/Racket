@@ -18,3 +18,18 @@
 ((lambda (a b) (+ (* 2 a) b)) 5 6)
 
 ((lambda (wd) (word (last wd) (first wd))) 'impish)
+
+(define (acronym phrase)
+  (accumulate word (every first phrase)))
+
+(acronym '(american civil liberties union))
+(acronym '(reduced instruction set computer))
+(acronym '(quod erat demonstrandum))
+
+(first 'american)
+
+(every first '(american civil liberties union))
+
+(accumulate word '(a c l u))
+
+(acronym '(united states of america))
