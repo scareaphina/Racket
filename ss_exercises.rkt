@@ -40,3 +40,13 @@
 
 (define (forth x)
   (* (square x) (square x)))
+
+; 4.7
+
+(define (square x)
+  (* x x))
+
+(define (abs arg)
+  (sqrt (square arg)))
+
+(abs 3)
