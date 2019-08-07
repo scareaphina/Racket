@@ -63,3 +63,14 @@
 ((same-arg-twice *) 4)
 
 ; 16
+
+(define (flip fn)
+  (lambda (a b) (fn b a)))
+
+((flip -) 5 8)
+
+; 3
+
+((flip se) 'goodbye 'hello)
+
+; '(hello goodbye)
