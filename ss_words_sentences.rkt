@@ -58,3 +58,17 @@
 (butfirst 'a)
 
 (butfirst 1024)
+
+; constructors
+
+(word 'ses ' qui 'pe 'da 'lian 'ism)
+
+(word 'now 'here)
+
+(word 35 893)
+
+(sentence 'carry 'that 'weight)
+
+(sentence '(john paul) '(george ringo))
+
+(se '(one plus one) 'makes 2)
