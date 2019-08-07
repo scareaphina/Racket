@@ -22,3 +22,11 @@
       )     ; matching parentheses that they're one expression.
    ())
 
+; you can work your way down like this
+
+(+ (* (- 10 7) (+ 4 1)) (- 15 (/ 12 3)) 17)
+(+ (* 3        (+ 4 1)) (- 15 (/ 12 3)) 17)
+(+ (* 3        5      ) (- 15 (/ 12 3)) 17)
+(+ 15                   (- 15 (/ 12 3)) 17)
+(+ 15                   (- 15 4       ) 17)
+(+ 15                   11              17)
