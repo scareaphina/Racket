@@ -86,3 +86,14 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+; pitfalls
+
+(define (sum-of-squares x y)
+  (+ (square x)
+     (square y)))
+
+(define (f x)
+  (+ (* x 3) 10))
+
+;;;;;;;;;;;;;;;;;;;;;;;
+
