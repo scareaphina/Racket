@@ -43,3 +43,23 @@
       '(mick smokey paul diana bill geddy john yoko keith reparata))
       
 ; '(smokey geddy keith reparata)
+
+;; the real power of lambda comes when using lambda to define a function
+
+(define (make-adder num)
+  (lambda (x) (+ x num)))
+
+((make-adder 4) 7)
+
+; 11
+
+(define (same-arg-twice fn)
+  (lambda (arg) (fn arg arg)))
+
+((same-arg-twice word) 'hello)
+
+; 'hellohello
+
+((same-arg-twice *) 4)
+
+; 16
