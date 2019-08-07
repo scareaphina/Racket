@@ -90,3 +90,15 @@
 (define (square x) (* x x))
 
 (define square (lambda (x) (* x x)))
+
+(define square (same-arg-twice *))
+
+(square 7)
+
+; 49
+
+(define forth-power (repeated square 2))
+
+(forth-power 5)
+
+; 625
