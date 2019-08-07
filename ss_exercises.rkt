@@ -29,3 +29,14 @@
   (* (/ 5 9) (- fahr 32)))
 
 (fahr-to-cel 95)
+
+; 4.6
+
+(define (square x)
+  (* x x))
+
+(define (forth x)
+  (* (* x x) (*x x)))
+
+(define (forth x)
+  (* (square x) (square x)))
