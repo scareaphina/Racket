@@ -50,3 +50,16 @@
   (sqrt (square arg)))
 
 (abs 3)
+
+; 4.10
+
+(define (tip bill)
+  (ceiling (* bill .15)))
+
+(tip 100)
+
+(tip 19.98)
+
+(tip 29.23)
+
+(tip 7.54)
