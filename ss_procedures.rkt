@@ -47,3 +47,42 @@
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 ; composability
+
+(define (average a b)
+  (/ (+ a b) 2))
+
+(average (+ 10 8) (* 3 5))
+
+(average (average 2 3) (average 4 5))
+
+(sqrt (average 143 145))
+
+; the substitution model
+
+(define (square x)
+  (* x x))
+
+(define (hypotenuse a b)
+  (sqrt (+ (square a) (square b))))
+
+(hypotenuse 5 12)
+
+; spelled out:
+
+(sqrt (+ (square 5) (square 12)))
+
+(hypotenuse 5 12)                   ; substitute into HYPOTENUSE body
+(sqrt (+ (square 5) (square 12)))   ; substitute for (SQUARE 5)
+         (* 5 5)
+         25
+(sqrt (+ 25         (square 12)))   ; substitute for (SQUARE 12)
+                    (* 12 12)
+                    144
+(sqrt (+ 25         144))
+      (+ 25         144)            ; combine the results as before
+      169
+(sqrt 169)
+13
+
+;;;;;;;;;;;;;;;;;;;;;;;
+
