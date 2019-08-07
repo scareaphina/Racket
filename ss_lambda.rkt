@@ -74,3 +74,19 @@
 ((flip se) 'goodbye 'hello)
 
 ; '(hello goodbye)
+
+(define pi 3.141592654)
+
+(* pi 10)
+
+; 31.41592654
+
+(define drummer '(ringo starr))
+
+(first drummer)
+
+; ringo
+
+(define (square x) (* x x))
+
+(define square (lambda (x) (* x x)))
