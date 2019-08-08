@@ -60,3 +60,9 @@
 (sentence? 'wait)
 
 (sentence? '(what goes on))
+
+(define (vowel? letter)
+  (member? letter 'aeiou))
+
+(define (positive? number)
+  (> number 0))
