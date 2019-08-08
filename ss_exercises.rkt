@@ -156,3 +156,21 @@
 (indef-article 'snack)
 (indef-article 'apple)
 (indef-article 'map)
+
+; 6.9
+
+(define (plural wd)
+  (if (equal? (last wd) 'y)
+      (word (bl wd) 'ies)
+      (word wd 's)))
+
+(define (thismany amount noun)
+  (sentence
+   amount
+   (if (> amount 1) (plural noun) noun)))
+
+(thismany 1 'apple)
+
+(thismany 2 'baby)
+
+(thismany 75 'apple)
