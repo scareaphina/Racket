@@ -66,3 +66,42 @@
 
 (define (positive? number)
   (> number 0))
+
+; using predicates
+
+(define (abs num)
+  (if (< num 0)
+      (- num)
+      num))
+
+(define (divisible? big little)
+  (= (remainder big little) 0))
+
+(define (buzz num)
+  (if (or (divisible? num 7) (member? 7 num))
+      'buzz
+      num))
+
+(buzz 17)
+(buzz 42)
+(buzz 124)
+
+;(define (plural wd)
+;  (word wd 's))
+
+(plural 'beatle)
+
+(plural 'computer)
+
+(plural 'fly) ; ah, but incorrect. how do we make this correct?
+
+(define (plural wd)
+  (if (equal? (last wd) 'y)
+      (word (bl wd) 'ies)
+      (word wd 's)))
+
+(plural 'beatle)
+
+(plural 'computer)
+
+(plural 'fly)
