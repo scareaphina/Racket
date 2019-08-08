@@ -124,3 +124,22 @@
 (teen? 14)
 (teen? 10)
 (teen? 20)
+
+; 6.7
+
+(define (type-of argument)
+  (cond ((boolean? argument) 'boolean)
+        ((sentence? argument) 'sentence)
+        ((number? argument) 'number)
+        ((word? argument) 'word)
+        (else 'huh?)))
+
+(type-of 34)
+
+(type-of '(never gonna give you up))
+
+(type-of "")
+
+(type-of #t)
+
+(type-of 'never)
