@@ -182,3 +182,25 @@
         ((equal? letter 'd) 500)
         ((equal? letter 'm) 1000)
         (else 'huh?)))
+
+(define (truefalse value)
+  (cond (value 'true)
+        (else 'false)))
+
+(truefalse (= 2 (+ 1 1)))
+
+(truefalse (= 5 (+ 2 2)))
+           
+; most restrictive test goes first
+
+(cond ((number? (first sent)) &hellip) 
+      ((empty? sent) &hellip)
+      & hellip) 
+
+;; wrong, because the first test only makes sense once you've established that there is a first word of the sentence
+
+(cond ((empty? sent) &hellip)
+      ((and (not (empty? sent)) (number? (first sent))) &hellip)
+      &hellip)
+
+;; this is also unnecessary because the sentence is nonempty once we get as far as the second clause
