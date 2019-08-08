@@ -81,3 +81,36 @@
 (first-two 'seraphina)
 
 (first-two 'ambulatory)
+
+;6.5
+
+(define (am? time)
+  (equal? (last time) 'am))
+
+(define (pm? time)
+  (equal? (last time) 'pm))
+
+(define (american-time time)
+  (if (> time 12)
+      (sentence (- time 12)
+                (if (= time 24) 'am 'pm))
+      (sentence time (if (= time 12) 'pm 'am))))
+
+(define (european-time time)
+  (if (or
+       (and
+        (< (first time) 12) (pm? time))
+       (and
+        (= (first time) 12) (am? time)))
+      (+ (first time) 12)
+      (first time)))
+
+(european-time '(8 am))
+
+(european-time '(4 pm))
+
+(american-time 21)
+
+(american-time 12)
+
+(european-time '(12 am))
