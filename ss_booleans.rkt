@@ -204,3 +204,26 @@
       &hellip)
 
 ;; this is also unnecessary because the sentence is nonempty once we get as far as the second clause
+
+; if is composable
+
+(define (greet name)
+  (if (equal? (first name) 'professor)
+      (se '(pleased to meet you)
+          'professor
+          (last name)
+          '(- how are you?))
+      (se '(pleased to meet you)
+          (first name)
+          '(- how are you?))))
+
+(greet '(brian epstein))
+
+(greet '(professor donald knuth))
+                          
+(define (greet name)
+  (se '(pleased to meet you)
+      (if (equal? (first name) 'professor)
+          (se 'professor (last name))
+          (first name))
+      '(- how are you?)))
