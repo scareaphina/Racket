@@ -105,3 +105,13 @@
 (plural 'computer)
 
 (plural 'fly)
+
+; special forms
+
+; if is a special form
+
+(if (= 3 3)
+    'sure
+    (factorial 1000))
+    
+    
