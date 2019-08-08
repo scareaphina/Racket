@@ -114,4 +114,19 @@
     'sure
     (factorial 1000))
     
-    
+; and & or are also special forms
+
+(define (divisible? big small)
+  (= (remainder big small) 0))
+
+(define (num-divisible-by-4? x)
+  (and (number? x) (divisible? x 4)))
+
+(num-divisible-by-4? 16)
+
+(num-divisible-by-4? 6)
+
+(num-divisible-by-4? 'aardvark)
+
+(divisible? 'aardvark 4)
+
