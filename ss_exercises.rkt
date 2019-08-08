@@ -114,3 +114,13 @@
 (american-time 12)
 
 (european-time '(12 am))
+
+; 6.6
+
+(define (teen? age)
+  (and(< age 19)
+      (> age 13)))
+
+(teen? 14)
+(teen? 10)
+(teen? 20)
