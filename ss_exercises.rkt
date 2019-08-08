@@ -143,3 +143,16 @@
 (type-of #t)
 
 (type-of 'never)
+
+; 6.8
+
+(define (vowel? x)
+  (member? x '(a e i o u)))
+
+(define (indef-article word)
+  (cond ((vowel? (first word)) (sentence 'an word))
+      (else (sentence 'a word))))
+
+(indef-article 'snack)
+(indef-article 'apple)
+(indef-article 'map)
