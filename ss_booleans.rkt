@@ -38,3 +38,25 @@
 (empty? (bf (bf 'hi)))
 
 (empty? "")
+
+(number? 'three)
+
+(number? 74)
+
+(boolean? #f)
+
+(boolean? '(the beatles))
+
+(boolean? 234)
+
+(boolean? #t)
+
+(word? 'flying)
+
+(word? '(dig it))
+
+(word? 87)
+
+(sentence? 'wait)
+
+(sentence? '(what goes on))
