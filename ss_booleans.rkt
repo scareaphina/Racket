@@ -8,3 +8,33 @@
 (greet '(matt wright))
 
 (greet '(professor harold abelson))
+
+(member? 'mick '(dave dee dozy beaky mick and tich))
+
+(member? 'mick '(john paul george ringo))
+
+(member? 'e 'truly)
+
+(member? 'y 'truly)
+
+(= 3 4)
+
+(= 67 67)
+
+(= (+ 52 8) 60)
+
+(> 98 97)
+
+(before? 'zorn 'coleman)
+
+(before? 'pete 'ringo)
+
+(empty? '(abbey road))
+
+(empty? '())
+
+(empty? 'hi)
+
+(empty? (bf (bf 'hi)))
+
+(empty? "")
