@@ -130,3 +130,28 @@
 
 (divisible? 'aardvark 4)
 
+; everything that isn't false is true
+
+(define (divisible? big little)
+  (= (remainder big little) 0))
+
+(if (+ 3 4) 'yes 'no)
+
+(define (integer-quotient big little)
+  (if (divisible? big little)
+      (/ big little)
+      #f))
+
+(integer-quotient 27 3)
+
+(integer-quotient 12 5)
+
+; returns a true result as soon as it evaluates true
+(or #f 3 #f 4)
+
+; returns a true result only if all arguments are true
+(and 1 2 3 4 5)
+
+(define (integer-quotient big little) ; alternate version
+  (and (divisible? big little)
+       (/ big little)))
