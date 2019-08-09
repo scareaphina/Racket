@@ -15,3 +15,25 @@
   (make-conjugator '(you will have) 'ed))
 
 (second-person-future-perfect 'laugh)
+
+; higher order functions
+
+(define (two-firsts sent)
+  (se (first (first sent))
+      (first (last sent))))
+
+(two-firsts '(john lennon))
+
+(two-firsts '(george harrison))
+
+(define (three-firsts sent)
+  (se (first (first sent))
+      (first (first (bf sent)))
+      (first (last sent))))
+
+(three-firsts '(james paul mccartney))
+
+(define (first-letters sent)
+  (every first sent))
+
+(first-letters '(lucy in the sky with diamonds))
