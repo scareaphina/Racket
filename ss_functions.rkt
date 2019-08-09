@@ -92,3 +92,16 @@
 (keep real-world? '(lucy in the sky with diamonds))
 
 (every first (keep real-world? '(lucy in the sky with diamonds)))
+
+; accumulate
+
+(accumulate + '(6 3 4 -5 7 8 9))
+
+(accumulate word '(a c l u))
+
+(accumulate max '(128 32 134 136))
+
+(define (hyphenate word1 word2)
+  (word word1 '- word2))
+
+(accumulate hyphenate '(ob la di ob la da))
