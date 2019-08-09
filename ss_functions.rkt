@@ -105,3 +105,27 @@
   (word word1 '- word2))
 
 (accumulate hyphenate '(ob la di ob la da))
+
+; combining higher-order functions
+
+(define (add-numbers sent)
+  (accumulate + (keep number? sent)))
+
+(add-numbers '(4 calling birds 3 french hens 2 turtle doves))
+
+(add-numbers '(1 for the money 2 for the show 3 to get ready and 4 to go))
+
+(define (always-one arg)
+  2)
+
+(define (count sent)
+  (accumulate + (every always-one sent)))
+
+(count '(the continuing story of bungalow bill))
+
+(define (acronym phrase)
+  (accumulate word (every first (keep real-word? phrase))))
+
+(acronym '(reduced instruction set computer))
+
+(acronym '(structure and interpretation of computer programs))
