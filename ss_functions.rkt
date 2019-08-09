@@ -69,3 +69,26 @@
   (se (word 'with wd) 'you))
 
 (every g '(in out))
+
+; keep
+
+(keep even? '(1 2 3 4 5))
+
+(define (ends-e? word) (equal? (last word) 'e))
+
+(keep ends-e? '(please put the salami above the blue elephant))
+
+(keep number? '(1 after 1909))
+
+(keep number? 'zonk23hey9)
+
+(define (vowel? letter) (member? letter '(a e i o u)))
+
+(keep vowel? 'piggies)
+
+(define (real-world? wd)
+  (not (member? wd '(a the an in of and for to with))))
+
+(keep real-world? '(lucy in the sky with diamonds))
+
+(every first (keep real-world? '(lucy in the sky with diamonds)))
