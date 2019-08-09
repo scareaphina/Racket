@@ -37,3 +37,23 @@
   (every first sent))
 
 (first-letters '(lucy in the sky with diamonds))
+
+(define (first-letters sent)
+  (every first sent))
+
+(first-letters '(lucy in the sky with diamonds))
+
+(every last '(while my guitar gently weeps))
+
+(every - '(4 5 6 7 8 9))
+
+(define (plural noun)
+  (if (equal? (last noun) 'y)
+      (word (bl noun) 'ies)
+      (word noun 's)))
+
+(every plural '(beatle turtle holly kink zombie))
+
+(define (double letter) (word letter letter))
+
+(every double 'girl)
