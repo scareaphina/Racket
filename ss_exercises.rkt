@@ -174,3 +174,19 @@
 (thismany 2 'baby)
 
 (thismany 75 'apple)
+
+;6.13
+
+(define (greet name)
+  (se '(pleased to meet you)
+  (cond ((equal? (first name) 'professor) 'professor)
+        ((equal? (first name) 'mr) 'mister)
+        ((equal? (first name) 'ms) 'miss)
+        ((equal? (first name) 'doctor) 'doctor)
+        (else first name))
+  (se (last name)
+      '(- how are you?))))
+
+(greet '(professor michael brown))
+(greet '(mr andrews))
+(greet '(safi harriott))
