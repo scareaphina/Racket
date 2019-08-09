@@ -57,3 +57,15 @@
 (define (double letter) (word letter letter))
 
 (every double 'girl)
+
+(define (set-of-first-two wd)
+  (se (first wd) (first (bf wd))))
+
+(every set-of-first-two '(the inner light))
+
+(every set-of-first-two '(tell me what you see))
+
+(define (g wd)
+  (se (word 'with wd) 'you))
+
+(every g '(in out))
