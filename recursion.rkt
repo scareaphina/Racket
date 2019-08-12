@@ -52,3 +52,46 @@
 (downup 'toe)
 
 (downup 'banana)
+
+;;;;;;;;;;;;;;;;;;;;;
+; pig latin
+
+(define (pigl0 wd)
+  (word wd 'ay))
+
+(pigl0 'alabaster)
+
+;(define (pigl1 wd)
+;  (word (bf wd) (first wd) 'ay))
+
+;(pigl1 'salami)
+
+;(define (pigl1 wd)
+;  (word (word (bf wd) (first wd))
+;        'ay))
+
+;(pigl1 'pastrami)
+
+(define (pigl1 wd)
+  (pigl0 (word (bf wd) (first wd))))
+
+(define (pigl2 wd)
+  (pigl1 (word (bf wd) (first wd))))
+
+(pigl2 'trample)
+
+(define (pigl3 wd)
+  (pigl2 (word (bf wd) (first wd))))
+
+(pigl3 'chrome)
+
+(define (pigl wd)
+  (if (member? (first wd) 'aeiou)
+      (word wd 'ay)
+      (pigl (word (bf wd) (first wd)))))
+
+(pigl 'apple)
+
+(pigl 'stair)
+
+(pigl 'thrush)
