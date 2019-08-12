@@ -190,3 +190,28 @@
 (greet '(professor michael brown))
 (greet '(mr andrews))
 (greet '(safi harriott))
+
+; 8.4
+
+(define (vowel? letter)
+  (member? letter '(a e i o u)))
+
+(define (even-count? word)
+  (even? (count word)))
+
+(define (ends-vowel? word)
+  (vowel? (last word)))
+
+(define (choose-beatles pred)
+  (keep pred '(John Paul George Ringo)))
+
+(choose-beatles ends-vowel?)
+
+(choose-beatles even-count?)
+
+; 8.5
+
+(define (transform-beatles procedure)
+  (se (every procedure '(John Paul George Ringo))))
+
+(transform-beatles butfirst)
