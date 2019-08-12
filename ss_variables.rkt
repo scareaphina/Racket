@@ -37,7 +37,9 @@
 (define (roots1 a b c discriminant)
   (se (/ (+ (- b) discriminant) (* 2 a))
       (/ (- (- b) discriminant) (* 2 a))))
-      
+
+; Let is a special form that takes two arguments. The first is a sequence of name-value pairs enclosed in parentheses. (In this example, there is only one name-value pair.) The second argument, the body of the let, is the expression to evaluate.
+
 (define (roots a b c)
   (let ((discriminant (sqrt (- (* b b) (* 4 a c)))))
     (se (/ (+ (- b) discriminant) (* 2 a))
