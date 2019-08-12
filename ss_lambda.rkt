@@ -122,4 +122,27 @@
 (define (f x)
   (lambda (x) (+ x 3))) ; don't procedures in procedures with the same formal parameter name in both
   
-  
+  ; named and unnamed functions
+
+(define pi 3.141592654)
+
+(define (circle-area radius)
+  (* pi radius radius))
+
+(define (circumference radius)
+  (* 2 pi radius))
+
+(define (sphere-surface-area radius)
+  (* 4 pi radius radius))
+
+(define (sphere-volume radius)
+  (* (/ 4 3) pi radius radius radius))
+
+(define (square x) (* x x))
+
+(define (backwards wd)
+  (accumulate (lambda (a b) (word b a)) wd))
+
+(backwards 'yesterday)
+
+(every backwards '(i saw her standing there))
