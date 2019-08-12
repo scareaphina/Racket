@@ -38,3 +38,17 @@
 
 (define (downup2 wd)
   (se wd (downup1 (bl wd)) wd))
+
+;(define (downup wd)                          ;; first version
+;  (se wd (downup (bl wd)) wd))
+
+;(downup 'toe)
+
+(define (downup wd)
+  (if (= (count wd) 1)
+      (se wd)
+      (se wd (downup (bl wd)) wd)))
+
+(downup 'toe)
+
+(downup 'banana)
