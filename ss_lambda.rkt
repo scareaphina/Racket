@@ -102,3 +102,24 @@
 (forth-power 5)
 
 ; 625
+
+; the truth about let
+
+(define (roots a b c)
+  (roots1 a b c (sqrt (- (* b b) (* 4 a c)))))
+
+(define (roots1 a b c discriminant)
+  (se (/ (+ (- b) discriminant) (* 2 a))
+      (/ (- (- b) discriminant) (* 2 a))))
+
+(define (roots a b c)
+  (let ((discriminant (sqrt (- (* b b) (* 4 a c)))))
+    (se (/ (+ (- b) discriminant) (* 2 a))
+        (/ (- (- b) discriminant) (* 2 a)))))
+
+; name conflicts
+
+(define (f x)
+  (lambda (x) (+ x 3))) ; don't procedures in procedures with the same formal parameter name in both
+  
+  
