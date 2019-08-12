@@ -251,3 +251,13 @@
   (se (every nato-phon word)))
 
 (nato-phon '(abc))
+
+; 9.4
+
+(define (who sent)
+  (every (lambda (wd)
+           (se wd sent)) '(pete roger john keith)))
+
+(who '(sells out))
+
+'(pete sells out roger sells out john sells out keith sells out)
