@@ -95,3 +95,14 @@
 (pigl 'stair)
 
 (pigl 'thrush)
+
+;;;;;;;;;;;;;;;
+
+(define (explode1 wd)
+  (se wd))
+
+(define (explode2 wd)
+  (se (first wd) (last wd)))
+
+(define (explode3 wd)
+  (se (first wd) (first (bf wd)) (last wd)))
