@@ -407,6 +407,27 @@
 
 ; 12.7
 
+;; if i use their helper, it breaks when there's an unexpected entry.
+
+(define (spell-digit digit)
+  (item (+ 1 digit)
+	'(zero one two three four five six seven eight nine)))
+
+(define (spell-number sent)
+  (if (empty? sent)
+      '()
+      (se
+       (spell-digit (first sent))
+       (spell-number (bf sent)))))
+
+(spell-number 1981)
+(spell-number 18460)
+(spell-number 'apple) ; +: contract violation expected: number? given: 'a argument position: 2nd other arguments...:
+
+;;;;
+
+; my way gets me a result with non-numbers
+
 (define (number-words num)
   (if (empty? num)
       '()
@@ -431,3 +452,4 @@
 
 (spell-number 1981)
 (spell-number 18460)
+(spell-number 'apple)
