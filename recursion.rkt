@@ -98,11 +98,30 @@
 
 ;;;;;;;;;;;;;;;
 
+(define (explode0 wd)
+  '())
+
 (define (explode1 wd)
   (se wd))
 
 (define (explode2 wd)
   (se (first wd) (last wd)))
 
+;(define (explode3 wd)
+;  (se (first wd) (first (bf wd)) (last wd)))
+
+; complex enough that we want to use explode2 to help
+
 (define (explode3 wd)
-  (se (first wd) (first (bf wd)) (last wd)))
+  (se (first wd) (explode2 (bf wd))))
+
+(define (explode4 wd)
+  (se (first wd) (explode3 (bf wd))))
+
+; so what's our base case? now that we know the pattern we can write explode2 in terms of 1, and even 1 in terms of 0
+
+(define (explode2 wd)
+  (se (first wd) (explode1 (bf wd))))
+
+(define (explode1 wd)
+  (se (first wd) (explode0 (bf wd))))
