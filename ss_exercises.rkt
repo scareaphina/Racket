@@ -8,14 +8,21 @@
 
 ; 4.4
 
-(define (next x)
-  (+ x 1))
-
 (define (square x)
   (* x x))
 
-(define (triangle-area triangle)
-  (* 0.5 (* base height)))
+(define (cube x)
+  (* x (square x)))
+
+(define (sphere-volume r)
+  (* (/ 4 3) 3.141592654)
+  (cube r))
+
+(define (next x)
+  (+ x 1))
+
+(define (triangle-area base height)
+  (* 0.5 base height))
 
 (define (sum-of-squares x y)
   (+ (square x) (square y)))
