@@ -308,3 +308,14 @@
 (initials '(if i needed someone))
 
 (initials '(find me somebody to love))
+
+; 11.6
+
+(define (countdown number)
+  (if (= number 0)
+      'BLASTOFF!
+      (cons number (countdown (- number 1)))))
+
+(countdown 15)
+
+(countdown 5)
