@@ -70,6 +70,22 @@
 (define (forth x)
   (* (square x) (square x)))
 
+;;;;;;;;;;;;;;;;
+; second attempt
+
+(define (forth x)
+  (* (* x x) (* x x)))
+
+(forth 3)
+
+(define (square n)
+  (* n n))
+
+(define (forth2 n)
+  (* (square n) (square n)))
+
+(forth2 3)
+
 ; 4.7
 
 (define (square x)
