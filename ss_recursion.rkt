@@ -218,3 +218,19 @@
 (downup 'a)
 
 (downup 'alphabet)
+
+(define (factorial n)
+  (if (= n 1)
+      1
+      (* n (factorial (- n 1)))))
+
+(define (letter-pairs wd)
+  (if (<= (count wd) 1)
+      '()
+      (se (first-two wd)
+          (letter-pairs (bf wd)))))
+
+(define (first-two wd)
+  (word (first wd) (first (bf wd))))
+
+(first-two 'a)
