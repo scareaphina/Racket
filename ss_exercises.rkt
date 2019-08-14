@@ -453,3 +453,20 @@
 (spell-number 1981)
 (spell-number 18460)
 (spell-number 'apple)
+
+; 12.8
+
+(define (get-number n)
+  (if (number? n)
+      n
+      '()))
+
+(define (numbers sent)
+  (if (empty? sent)
+      sent
+      (se (get-number (first sent))
+          (numbers (bf sent)))))
+
+(numbers '(i ate 2 pies 30 days ago))
+(numbers '(i plan on visiting 12 countries in 2 years))
+(numbers '(i have never seen that before))
