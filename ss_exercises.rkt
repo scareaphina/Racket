@@ -404,3 +404,30 @@
 (exaggerate '(i ate 3 slices of cake))
 (exaggerate '(i feel sad today))
 (exaggerate '(i am sick))
+
+; 12.7
+
+(define (number-words num)
+  (if (empty? num)
+      '()
+      (cond ((equal? num 0) 'zero)
+            ((equal? num 1) 'one)
+            ((equal? num 2) 'two)
+            ((equal? num 3) 'three)
+            ((equal? num 4) 'four)
+            ((equal? num 5) 'five)
+            ((equal? num 6) 'six)
+            ((equal? num 7) 'seven)
+            ((equal? num 8) 'eight)
+            ((equal? num 9) 'nine)
+            (else '(huh?)))))
+
+(define (spell-number sent)
+  (if (empty? sent)
+      '()
+      (se
+       (number-words (first sent))
+       (spell-number (bf sent)))))
+
+(spell-number 1981)
+(spell-number 18460)
