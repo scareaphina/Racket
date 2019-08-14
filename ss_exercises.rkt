@@ -43,6 +43,22 @@
 
 (fahr-to-cel 95)
 
+;;;;;;;
+
+; second attempt
+
+; 4.5
+
+(define (cel-fahr fahr)
+  (* (/ 5 9) (- fahr 32)))
+
+; C=5⁄9(F-32)
+
+(define (fahr-cel cel)
+  (* (/ 5 9) (+ cel 32)))
+
+; F=9⁄5C+32
+
 ; 4.6
 
 (define (square x)
