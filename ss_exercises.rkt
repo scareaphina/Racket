@@ -470,3 +470,22 @@
 (numbers '(i ate 2 pies 30 days ago))
 (numbers '(i plan on visiting 12 countries in 2 years))
 (numbers '(i have never seen that before))
+
+; 12.9
+
+(define (real-word? wd)
+  (not (member? wd '(a the an in of and for to with))))
+
+(define (get-real-word wd)
+  (if (real-word? wd)
+      wd
+      '()))
+
+(define (real-words sent)
+  (if (empty? sent)
+      sent
+      (se (get-real-word (first sent))
+          (real-words (bf sent)))))
+
+(real-words '(if i had a million dollars))
+(real-words '(the song love of the loved by the beatles))
