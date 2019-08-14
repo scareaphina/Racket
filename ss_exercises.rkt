@@ -375,3 +375,32 @@
 
 (acronym '(bananas are good))
 (acronym '(a))
+
+; 12.5
+
+(define (double n)
+  (* n 2))
+
+(define (exag-help wd)
+  (if (number? wd)
+      (double wd)
+      (cond ((equal? wd 'good) 'great)
+            ((equal? wd 'bad) 'terrible)
+            ((equal? wd 'sad) 'miserable)
+            ((equal? wd 'okay) 'boring)
+            ((equal? wd 'pretty) 'beautiful)
+            ((equal? wd 'tasty) 'delicious)
+            ((equal? wd 'sick) 'dying)
+            (else wd))))                    
+
+(define (exaggerate sent)
+  (if (empty? sent)
+      '()
+      (se
+       (exag-help (first sent))
+       (exaggerate (bf sent)))))
+
+(exaggerate '(i had a good time))
+(exaggerate '(i ate 3 slices of cake))
+(exaggerate '(i feel sad today))
+(exaggerate '(i am sick))
