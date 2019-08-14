@@ -489,3 +489,16 @@
 
 (real-words '(if i had a million dollars))
 (real-words '(the song love of the loved by the beatles))
+
+; 12.10
+
+(define (remove word sent)
+  (if (empty? sent)
+      sent
+      (se (if (equal? (first sent) word)
+              '()
+              (first sent))
+          (remove word (bf sent)))))
+
+(remove 'the '(the song love of the loved by the beatles))
+(remove 'love '(the song love of the loved by the beatles))
