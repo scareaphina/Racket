@@ -155,3 +155,14 @@
   (if (= n 1)
       1
       (* n (factorial (- n 1)))))
+
+; evens
+
+(define (losing-evens sent)
+  (if (empty? sent)
+      '()
+      (se (losing-evens (bl sent))
+          (last sent))))
+
+(losing-evens '(i want to hold your hand))
+
