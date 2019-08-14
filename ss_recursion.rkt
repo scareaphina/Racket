@@ -138,5 +138,20 @@
 (define (reverse wd)
   (word (last wd)
         (reverse (bl wd))))
-        
 
+;;;;;;;;;;;;;;;;;;;;;
+
+; factorial
+                    
+(define (factorial n)
+  (* n (factorial (- n 1))))
+
+(define (factorial n)
+  (if (= n 1)
+      1
+      (* n (factorial (- n 1)))))
+
+(define (factorial n)
+  (if (= n 1)
+      1
+      (* n (factorial (- n 1)))))
