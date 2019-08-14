@@ -132,3 +132,11 @@
   (if (empty? wd)
       '()
       (se (first wd) (explode (bf wd)))))
+
+;;;;;;;;;;;;;;;;;;;;;
+
+(define (reverse wd)
+  (word (last wd)
+        (reverse (bl wd))))
+        
+
