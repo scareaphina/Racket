@@ -190,3 +190,22 @@
           (evens (bf (bf sent))))))
 
 (evens '(got to get you into my life))
+
+; simplifying base case
+
+(define (reverse1 wd)
+  (if (= (count wd) 1)
+      wd
+      (word (last wd)
+            (reverse1 (bl wd)))))
+
+;(word (last wd)
+;      (reverse (bl wd)))
+
+(define (reverse wd)
+  (if (empty? wd)
+      ""
+      (word (last word)
+            (reverse (bl word)))))
+
+(reverse 'unicorn)
