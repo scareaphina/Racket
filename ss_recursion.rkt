@@ -166,3 +166,27 @@
 
 (losing-evens '(i want to hold your hand))
 
+(define (losing-evens sent)
+  (if (empty? sent)
+      '()
+      (se (losing-evens (bl sent))
+          (last sent))))
+
+(losing-evens '(i want to hold your hand))
+
+(define (evens1 sent)
+  (cond ((empty? sent) '())
+        ((odd? (count sent))
+         (evens1 (bl sent)))
+        (else (se (evens1 (bl sent))
+                  (last sent)))))
+
+(evens1 '(i want to hold your hand))
+
+(define (evens sent)
+  (if (<= (count sent) 1)
+      '()
+      (se (first (bf sent))
+          (evens (bf (bf sent))))))
+
+(evens '(got to get you into my life))
