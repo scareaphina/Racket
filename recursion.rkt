@@ -125,3 +125,10 @@
 
 (define (explode1 wd)
   (se (first wd) (explode0 (bf wd))))
+
+; so now we can write a recursive process that handles one and two letter words so that only zero letter words are special cases
+
+(define (explode wd)
+  (if (empty? wd)
+      '()
+      (se (first wd) (explode (bf wd)))))
