@@ -299,3 +299,12 @@
              (count-ums (bf sent))))))
 
 (count-ums3 '(what if we um do um this))
+
+; 11.5
+
+(define (initials sent)
+  (every first sent))
+
+(initials '(if i needed someone))
+
+(initials '(find me somebody to love))
