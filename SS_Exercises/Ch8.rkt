@@ -115,3 +115,27 @@
 (true-for-all? even? '(2 4 6 8))
 (true-for-all? odd? '(3 5 7 9))
 (true-for-all? even? '(1 2 3 4 5))
+
+; 8.11
+
+(define (base-grade grade)
+  (let ((grade (first grade)))
+    (cond ((equal? grade 'a) 4)
+          ((equal? grade 'b) 3)
+          ((equal? grade 'c) 2)
+          ((equal? grade 'd) 1)
+          ((equal? grade 'f) 0)
+          (else 0))))
+
+(define (grade-mod grade)
+  (if (= (count grade) 1)
+      0
+      (+ 0 (word (bf grade) 0.33))))
+
+(define (gpa grade)
+  (let ((final-grade
+         (lambda (g)
+           (+ (base-grade g) (grade-mod g)))))
+    (/ (accumulate + (every final-grade grade)) (count grade))))
+
+(gpa 'a)
