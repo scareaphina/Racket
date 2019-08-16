@@ -18,6 +18,24 @@
 
 (choose-beatles even-count?)
 
+;;;;;;;;;;;;;
+; second attempt
+
+(define (even-count? word)
+  (even? (count word)))
+
+(define (vowel? letter)
+  (member? letter '(a e i o u)))
+
+(define (ends-vowel? word)
+  (vowel? (last word)))
+
+(define (choose-beatles pred)
+  (keep pred '(John Paul George Ringo)))
+
+(choose-beatles ends-vowel?)
+(choose-beatles even-count?)
+
 ; 8.5
 
 (define (transform-beatles procedure)
