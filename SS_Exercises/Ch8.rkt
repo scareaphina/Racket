@@ -87,3 +87,22 @@
 (letter-count 'monkey)
 (letter-count 'onomonopia)
 (letter-count '(this is a test of the emergency counting system))
+
+; 8.8
+
+
+(define (exaggerate-word wd)
+  (cond ((equal? wd 'good) 'great)
+        ((equal? wd 'sad) 'miserable)
+        ((equal? wd 'great) 'fantastic)
+        ((equal? wd 'small) 'tiny)
+        ((equal? wd 'big) 'gigantic)
+        ((equal? wd 'enjoy) 'love)
+        ((number? wd) (* wd 2))
+        (else wd)))
+
+(define (exaggerate sent)
+  (every exaggerate-word sent))
+
+(exaggerate-word '(i had a great time))
+(exaggerate-word '(i ate 11 potstickers))
