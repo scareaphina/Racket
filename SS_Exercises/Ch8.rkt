@@ -106,3 +106,12 @@
 
 (exaggerate-word '(i had a great time))
 (exaggerate-word '(i ate 11 potstickers))
+
+; 8.10
+
+(define (true-for-all? pred sent)
+  (= (count sent) (count (keep pred sent))))
+
+(true-for-all? even? '(2 4 6 8))
+(true-for-all? odd? '(3 5 7 9))
+(true-for-all? even? '(1 2 3 4 5))
