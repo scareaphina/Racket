@@ -78,3 +78,12 @@
   (se (every nato-phon word)))
 
 (nato-phon '(abc))
+
+; 8.7
+
+(define (letter-count sent)
+  (accumulate + (every count sent)))
+
+(letter-count 'monkey)
+(letter-count 'onomonopia)
+(letter-count '(this is a test of the emergency counting system))
