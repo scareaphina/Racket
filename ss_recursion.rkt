@@ -472,3 +472,8 @@
       ______
       (______ (first sent)
               (accumulate-somehow (bf sent)))))
+
+(define (first-number sent)
+  (cond ((empty? sent) 'no-number)
+	((number? (first sent)) (first sent))
+        (else (first-number (bf sent))))
