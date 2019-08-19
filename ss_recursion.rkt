@@ -409,3 +409,30 @@
 (untrace add-numbers)
 
 ;;;;;;;;;;;;;;;;;
+
+(define (vowel? letter)
+  (member? letter 'aeiou))
+
+(define (pigl wd)
+  (if (member? (first wd) 'aeiou)
+      (word wd 'ay)
+      (pigl (word (bf wd) (first wd)))))
+
+(define (keep-vowels wd)
+  (cond ((empty? wd) "")
+        ((vowel? (first wd))
+         (word (first wd) (keep-vowels (bf wd))))
+        (else (keep-vowels (bf wd)))))
+
+(define (safe-pigl sent)
+  (cond ((empty? sent) '())
+        ((has-vowel? (first sent))
+         (se (pigl (first sent)) (safe-pigl (bf sent))))
+        (else (safe-pigl (bf sent)))))
+
+(define (has-vowel? wd)
+  (not (empty? (keep-vowels wd))))
+
+(trace safe-pigl)
+
+(safe-pigl '(my pet fly is named xyzzy))
