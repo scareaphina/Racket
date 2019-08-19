@@ -346,3 +346,50 @@
 (doubles 'bookkeeper)
 
 (doubles 'mississippi)
+
+(define (addup nums)
+  (if (empty? nums)
+      0
+      (+ (first nums) (addup (bf nums)))))
+
+(define (scrunch-words sent)
+  (if (empty? sent)
+      ""
+      (word (first sent) (scrunch-words (bf sent)))))
+
+(trace addup)
+(trace scrunch-words)
+
+(addup '(8 3 6 1 10))
+(scrunch-words '(ack now ledge able))
+
+>(addup '(8 3 6 1 10))
+> (addup '(3 6 1 10))
+> >(addup '(6 1 10))
+> > (addup '(1 10))
+> > >(addup '(10))
+> > > (addup '())
+< < < 0
+< < <10
+< < 11
+< <17
+< 20
+<28
+28
+>(scrunch-words '(ack now ledge able))
+> (scrunch-words '(now ledge able))
+> >(scrunch-words '(ledge able))
+> > (scrunch-words '(able))
+> > >(scrunch-words '())
+< < <""
+< < 'able
+< <'ledgeable
+< 'nowledgeable
+<'acknowledgeable
+'acknowledgeable
+
+(define (sent-max sent)
+  (if (= (count sent) 1)
+      (first sent)
+      (max (first sent)
+           (sent-max (bf sent)))))
