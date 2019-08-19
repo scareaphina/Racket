@@ -311,3 +311,23 @@
                   (disjoint-pairs (bf (bf wd)))))))
 
 (disjoint-pairs 'tripoli)
+
+; the keep pattern
+
+(define (keep-three-letter-words sent)
+  (cond ((empty? sent) '())
+        ((= (count (first sent)) 3)
+         (se (first sent) (keep-three-letter-words (bf sent))))
+        (else (keep-three-letter-words (bf sent)))))
+
+(keep-three-letter-words '(one two three four five six seven eight nine))
+
+(define (vowel? letter)
+  (member? letter 'aeiou))
+
+(define (keep-vowels wd)
+  (cond ((empty? wd) "")
+        ((vowel? (first wd))
+         (word (first wd) (keep-vowels (bf wd))))))
+
+(keep-vowels 'napoleon)
