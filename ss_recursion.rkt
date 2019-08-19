@@ -436,3 +436,19 @@
 (trace safe-pigl)
 
 (safe-pigl '(my pet fly is named xyzzy))
+
+; helper procedures
+
+(define (every-nth n sent)
+  (every-nth-helper n n sent))
+
+(define (every-nth-helper interval remaining sent)
+  (cond ((empty? sent) '())
+        ((= remaining 1)
+         (se (first sent)
+             (every-nth-helper interval interval (bf sent))))
+        (else (every-nth-helper interval (- remaining 1) (bf sent)))))
+
+(trace every-nth-helper)
+
+(every-nth 3 '(with a little help from my friends))
