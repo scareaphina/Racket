@@ -333,3 +333,16 @@
 
 (keep-vowels 'napoleon)
 
+;;;;;;;;;;;;;;;;;;;
+
+(define (doubles wd)
+  (cond ((= (count wd) 1) "")
+        ((equal? (first wd) (first (bf wd)))
+         (word (first wd) (first (bf wd)) (doubles (bf (bf wd)))))
+        (else (doubles (bf wd)))))
+
+(trace doubles)
+
+(doubles 'bookkeeper)
+
+(doubles 'mississippi)
