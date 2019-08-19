@@ -393,3 +393,19 @@
       (first sent)
       (max (first sent)
            (sent-max (bf sent)))))
+
+; combining patterns
+
+(define (add-numbers sent)
+  (cond ((empty? sent) 0)
+        ((number? (first sent))
+         (+ (first sent) (add-numbers (bf sent))))
+        (else (add-numbers (bf sent)))))
+
+(trace add-numbers)
+
+(add-numbers '(if 6 were 9))
+
+(untrace add-numbers)
+
+;;;;;;;;;;;;;;;;;
