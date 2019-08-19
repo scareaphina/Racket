@@ -267,3 +267,45 @@
 (trace fib)
 
 (fib 4)
+
+; common patterns in recursive procedures
+
+(define (square x)
+  (* x x))
+
+(define (square-sent sent)
+  (if (empty? sent)
+      '()
+      (se (square (first sent))
+          (square-sent (bf sent)))))
+
+;;;;;;;;;;;;;;;
+
+(define (pigl wd)
+  (if (member? (first wd) 'aeiou)
+      (word wd 'ay)
+      (pigl (word (bf wd) (first wd)))))
+
+(define (pigl-sent sent)
+  (if (empty? sent)
+      '()
+      (se (pigl (first sent))
+          (pigl-sent (bf sent)))))
+
+;;;;;;;;;;;;;;;
+
+(define (letter-pairs wd)
+  (if (= (count wd) 1)
+      '()
+      (se (word (first wd) (first (bf wd)))
+          (letter-pairs (bf wd)))))
+
+(letter-pairs 'tripoli)
+
+(define (disjoint-pairs wd)
+  (cond ((empty? wd) '())
+        ((= (count wd) 1) (se wd))
+        (else (se (word (first wd) (first (bf wd)))
+                  (disjoint-pairs (bf (bf wd)))))))
+
+(disjoint-pairs 'tripoli)
