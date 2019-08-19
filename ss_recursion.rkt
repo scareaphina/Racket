@@ -477,3 +477,21 @@
   (cond ((empty? sent) 'no-number)
 	((number? (first sent)) (first sent))
         (else (first-number (bf sent))))
+
+; problems that don't follow patterns
+
+(define (sent-before? sent1 sent2)
+  (cond ((empty? sent1) #t)
+        ((empty? sent2) #f)
+        ((before? (first sent1) (first sent2)) #t)
+        ((before? (first sent2) (first sent1)) #f)
+        (else (sent-before? (bf sent1) (bf sent2)))))
+
+(trace sent-before?)
+
+(sent-before? '(hold me tight) '(sun king))
+
+(sent-before? '(lovely rita) '(love you to))
+
+(sent-before? '(strawberry fields forever)
+              '(strawberry fields usually))
