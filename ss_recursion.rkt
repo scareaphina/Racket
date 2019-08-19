@@ -270,6 +270,8 @@
 
 ; common patterns in recursive procedures
 
+; the every pattern
+
 (define (square x)
   (* x x))
 
