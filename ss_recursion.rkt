@@ -452,3 +452,23 @@
 (trace every-nth-helper)
 
 (every-nth 3 '(with a little help from my friends))
+
+; how to use recursive patterns
+
+(define (every-something sent)
+  (if (empty? sent)
+      '()
+      (se (________ (first sent))
+          (every-something (bf sent)))))
+
+(define (keep-if-something sent)
+  (cond ((empty? sent) '())
+        ((_______? (first sent))
+         (se (first sent) (keep-if-something (bf sent))))
+        (else (keep-if-something (bf sent)))))
+
+(define (accumulate-somehow sent)
+  (if (empty? sent)
+      ______
+      (______ (first sent)
+              (accumulate-somehow (bf sent)))))
