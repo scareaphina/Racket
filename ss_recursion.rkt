@@ -328,6 +328,8 @@
 (define (keep-vowels wd)
   (cond ((empty? wd) "")
         ((vowel? (first wd))
-         (word (first wd) (keep-vowels (bf wd))))))
+         (word (first wd) (keep-vowels (bf wd))))
+        (else (keep-vowels (bf wd)))))
 
 (keep-vowels 'napoleon)
+
