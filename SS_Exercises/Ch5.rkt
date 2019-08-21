@@ -8,6 +8,17 @@
 
 (third 'and)
 
+; second attempt with trace
+
+(define (third thing)
+  (first (butfirst
+          (butfirst thing))))
+
+(trace third)
+
+(third 'and)
+(third '(i wanna hold your hand))
+
 5.15
 
 (define (first-two wd)
