@@ -520,6 +520,9 @@
 	((equal? wd (first sent)) (bf sent))
 	(else (se (first sent) (remove-once wd (bf sent))))))
 
+(trace sort)
+(trace earliest-helper)
+
 (sort '(i wanna be your man))
 
 (before? 'starr 'best)
