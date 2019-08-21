@@ -39,3 +39,19 @@
 
 (first-two 'elephant)
 (first-two 'broccoli)
+
+; 5.16
+
+(define (two-first y z)
+  (word (first y) (first z)))
+
+(define (two-first-sent sent)
+  (word
+   (first (first sent))
+   (first (first (butfirst sent)))))
+
+(trace two-first)
+(trace two-first-sent)
+
+(two-first 'brian 'epstein)
+(two-first-sent '(brian epstein))
