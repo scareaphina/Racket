@@ -55,3 +55,11 @@
 
 (two-first 'brian 'epstein)
 (two-first-sent '(brian epstein))
+
+; 5.17
+
+(define (knight sent)
+  (sentence 'Sir sent))
+
+(knight 'Sterling)
+(knight '(Arthur of the Round Table))
