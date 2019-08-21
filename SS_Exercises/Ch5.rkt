@@ -28,3 +28,14 @@
 (first-two 'seraphina)
 
 (first-two 'ambulatory)
+
+; second attempt
+
+(define (first-two wd)
+  (word
+   (first wd) (first (butfirst wd))))
+
+(trace first-two)
+
+(first-two 'elephant)
+(first-two 'broccoli)
