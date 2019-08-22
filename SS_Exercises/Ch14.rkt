@@ -55,12 +55,24 @@
 
 ; 14.5
 
-;; saving this first attempt because it made me laugh
+;; saving this first attempt because it made me laugh and it was very close to my final answer
 
 (define (letter-count sent)
   (if (empty? sent)
       '()
       (se (count (first sent))
           (letter-count (bf sent)))))
+
+(letter-count '(lucy in the sky with diamonds))
+
+;; actual solution
+
+(define (letter-count sent)
+  (if (empty? sent)
+      0
+      (+ (count (first sent))
+         (letter-count (bf sent)))))
+
+(trace letter-count)
 
 (letter-count '(lucy in the sky with diamonds))
