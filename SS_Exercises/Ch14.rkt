@@ -126,3 +126,21 @@
 
 (expand '(4 calling birds 3 french hens))
 (expand '(the 7 samurai))
+
+; 14.9
+
+(define (helper x word sent)
+  (if (empty? sent)
+      '(requested word not found)
+      (if (equal? word (first sent))
+          x
+          (helper (+ x 1) word (bf sent)))))
+
+(define (location word sent)
+  (helper 1 word sent))
+
+(trace location)
+
+(location 'me '(you never give me your money))
+(location 'you '(this is real and you are completely unprepared))
+(location 'bad '(good omens))
