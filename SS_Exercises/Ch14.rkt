@@ -88,3 +88,16 @@
 
 (member? 'real '(this is real and you are completely unprepared))
 (member? 'woman '(y the last man))
+
+; 14.7
+
+(define (differences sent)
+  (if (<= (count sent) 1)
+      '()
+      (let ((f (first sent))
+            (s (bf sent)))
+        (se (- (first s) f) (differences s)))))
+
+(trace differences)
+
+(differences '(4 23 9 87 6 12))
