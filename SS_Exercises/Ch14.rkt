@@ -52,3 +52,15 @@
 (odds '(i lost my little girl))
 (odds '(ob la di ob la da))
 (odds '(this is how we do this))
+
+; 14.5
+
+;; saving this first attempt because it made me laugh
+
+(define (letter-count sent)
+  (if (empty? sent)
+      '()
+      (se (count (first sent))
+          (letter-count (bf sent)))))
+
+(letter-count '(lucy in the sky with diamonds))
