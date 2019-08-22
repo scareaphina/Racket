@@ -76,3 +76,15 @@
 (trace letter-count)
 
 (letter-count '(lucy in the sky with diamonds))
+
+; 14.6
+
+(define (member? wd sent)
+  (cond ((empty? sent) #f)
+        ((equal? wd (first sent)) #t)
+        (else (member? wd (bf sent)))))
+
+(trace member?)
+
+(member? 'real '(this is real and you are completely unprepared))
+(member? 'woman '(y the last man))
