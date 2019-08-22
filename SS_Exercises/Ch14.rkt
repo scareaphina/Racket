@@ -101,3 +101,5 @@
 (trace differences)
 
 (differences '(4 23 9 87 6 12))
+
+; was unsure how to do this and had to look up a solve - ask steve
