@@ -36,3 +36,19 @@
 
 (remdup '(ob la di ob la da))
 (remdup '(this is how we do this))
+
+; 14.4
+
+(define (odds-def word sent)
+  (cond ((empty? sent) sent)
+        ((= (remainder word 2) 0) (odds-def (+ word 1) (bf sent)))
+        (else (se (first sent) (odds-def (+ word 1) (bf sent))))))
+
+(define (odds sent)
+  (odds-def 1 sent))
+
+(trace odds)
+
+(odds '(i lost my little girl))
+(odds '(ob la di ob la da))
+(odds '(this is how we do this))
