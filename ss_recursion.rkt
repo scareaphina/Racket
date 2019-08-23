@@ -138,6 +138,10 @@
       '()
       (se (first wd) (explode (bf wd)))))
 
+(trace explode)
+
+(explode 'cats)
+
 ;;;;;;;;;;;;;;;;;;;;;
 
 (define (reverse wd)
