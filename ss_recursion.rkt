@@ -65,27 +65,26 @@
 
 (pigl0 'alabaster)
 
-;(define (pigl1 wd)
-;  (word (bf wd) (first wd) 'ay))
-
-;(pigl1 'salami)
-
-;(define (pigl1 wd)
-;  (word (word (bf wd) (first wd))
-;        'ay))
-
-;(pigl1 'pastrami)
-
 (define (pigl1 wd)
-  (pigl0 (word (bf wd) (first wd))))
+  (word (word (bf wd) (first wd))
+        'ay))
+
+(trace pigl1)
+
+(pigl1 'salami)
+(pigl1 'pastrami)
 
 (define (pigl2 wd)
   (pigl1 (word (bf wd) (first wd))))
+
+(trace pigl2)
 
 (pigl2 'trample)
 
 (define (pigl3 wd)
   (pigl2 (word (bf wd) (first wd))))
+
+(trace pigl3)
 
 (pigl3 'chrome)
 
@@ -94,10 +93,12 @@
       (word wd 'ay)
       (pigl (word (bf wd) (first wd)))))
 
+(trace pigl)
+
+(pigl 'alphabet)
+(pigl 'pillows)
 (pigl 'apple)
-
 (pigl 'stair)
-
 (pigl 'thrush)
 
 ;;;;;;;;;;;;;;;
