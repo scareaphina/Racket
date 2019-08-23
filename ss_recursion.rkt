@@ -1,5 +1,9 @@
 #lang simply-scheme
 
+; recursion
+
+; solving a big problem by reducing it to a similar, smaller subproblem
+
 (define (game low high)
   (let ((guess (average low high)))
     (cond ((too-low? guess) (game (+ guess 1) high))
@@ -538,3 +542,7 @@
 (trace from-binary)
 
 (from-binary 1101)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; advanced recursion
