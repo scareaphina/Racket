@@ -43,6 +43,37 @@
 
 (count-ums3 '(what if we um do um this))
 
+; 11.3
+
+(define (unspell-letter letter)
+  (cond ((member? letter 'abc) 2)
+        ((member? letter 'def) 3)
+        ((member? letter 'ghi) 4)
+        ((member? letter 'jkl) 5)
+        ((member? letter 'mno) 6)
+        ((member? letter 'prs) 7)
+        ((member? letter 'tuv) 8)
+        ((member? letter 'wxy) 9)
+        (else 0)))
+
+(define (phone-unspell1 wd)
+  (unspell-letter wd))
+
+(define (phone-unspell2 wd)
+  (word (unspell-letter (first wd))
+        (unspell-letter (first (bf wd)))))
+
+(define (phone-unspell sent)
+  (if (empty? sent)
+      '()
+      (se (unspell-letter (first sent))
+          (phone-unspell (bf sent)))))
+
+(trace phone-unspell)
+
+(phone-unspell 'catbutt)
+(phone-unspell 'unicorn)
+
 ; 11.5
 
 (define (initials sent)
