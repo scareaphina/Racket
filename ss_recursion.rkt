@@ -142,6 +142,60 @@
 
 (explode 'cats)
 
+; letter-pairs
+
+(define (letter-pairs0 wd)
+  '())
+
+(define (letter-pairs1 wd)
+  '())
+
+(define (letter-pairs2 wd)
+  (se wd))
+
+(define (letter-pairs3 wd)
+  (se (bl wd) (bf wd)))
+
+;(define (letter-pairs4 wd)
+;  (se (bl (bl wd))
+;      (bl (bf wd))
+;      (bf (bf wd))))
+
+;(define (letter-pairs4 wd)
+;  (se (bl (bl wd))
+;      (letter-pairs3 (bf wd))))
+
+;(trace letter-pairs4)
+
+;(letter-pairs4 'cats)
+
+;(define (letter-pairs5 wd)
+;  (se (bl (bl wd))
+;      (letter-pairs4 (bf wd))))
+
+;(letter-pairs5 'bagel)
+
+(define (first-two wd)
+  (word (first wd) (first (bf wd))))
+
+(define (letter-pairs4 wd)
+  (se (first-two wd) (letter-pairs3 (bf wd))))
+
+(define (letter-pairs5 wd)
+  (se (first-two wd) (letter-pairs4 (bf wd))))
+
+(define (letter-pairs wd)
+  (if (<= (count wd) 1)
+      '()
+      (se (first-two wd)
+          (letter-pairs (bf wd)))))
+
+(trace letter-pairs)
+
+(letter-pairs 'bagel)
+(letter-pairs 'elephant)
+(letter-pairs '3l3v3n)
+
 ;;;;;;;;;;;;;;;;;;;;;
 
 (define (reverse wd)
