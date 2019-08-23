@@ -1,5 +1,19 @@
 #lang simply-scheme
 
+; 11.1
+
+(define (downup1 wd)
+  (se wd))
+
+(define (downup2 wd)
+  (se wd (first wd) wd))
+
+(define (downup3 wd)
+  (se wd (downup2 (bl wd)) wd))
+
+(define (downup4 wd)
+  (se wd (downup3 (bl wd)) wd))
+
 ; 11.2
 
 (define (count-ums0 sent)
