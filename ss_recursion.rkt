@@ -270,7 +270,7 @@
 (trace evens)
 
 (evens '(got to get you into my life))
-(evens '(lucy in the sky with diamods))
+(evens '(lucy in the sky with diamonds))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
