@@ -229,10 +229,10 @@
       1
       (* n (factorial (- n 1)))))
 
-(define (factorial n)
-  (if (= n 1)
-      1
-      (* n (factorial (- n 1)))))
+(trace factorial)
+
+(factorial 3)
+(factorial 843)
 
 ; evens
 
