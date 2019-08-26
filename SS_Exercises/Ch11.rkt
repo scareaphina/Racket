@@ -15,7 +15,6 @@
   (se wd (downup3 (bl wd)) wd))
 
 ; 11.2
-
 (define (count-ums0 sent)
   0)
 
@@ -38,9 +37,12 @@
   (if (< (count sent) 1)
       0
       (if (equal? 'um (first sent))
-          (+ 1 (count-ums (bf sent))
-             (count-ums (bf sent))))))
+          (+ 1 (count-ums (bf sent)))
+          (count-ums (bf sent)))))
 
+(trace count-ums)
+
+(count-ums '(today um we are going to um talk about the combining um method))
 (count-ums3 '(what if we um do um this))
 
 ; 11.3
