@@ -207,8 +207,15 @@
 ;;;;;;;;;;;;;;;;;;;;;
 
 (define (reverse wd)
-  (word (last wd)
-        (reverse (bl wd))))
+  (if (= (count wd) 1)
+      wd
+      (word (last wd)
+            (reverse (bl wd)))))
+
+(trace reverse)
+
+(reverse 'miyazaki)
+(reverse 'loki)
 
 ;;;;;;;;;;;;;;;;;;;;;
 
