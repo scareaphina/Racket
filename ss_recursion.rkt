@@ -276,22 +276,25 @@
 
 ; simplifying base case
 
-(define (reverse1 wd)
+(define (reverse wd)
   (if (= (count wd) 1)
       wd
       (word (last wd)
-            (reverse1 (bl wd)))))
+            (reverse (bl wd)))))
 
-;(word (last wd)
-;      (reverse (bl wd)))
-
-(define (reverse wd)
-  (if (empty? wd)
-      ""
-      (word (last word)
-            (reverse (bl word)))))
+(trace reverse)
 
 (reverse 'unicorn)
+
+(define (reverse2 wd)
+  (if (empty? wd)
+      ""
+      (word (last wd)
+            (reverse (bl wd)))))
+
+(trace reverse2)
+
+(reverse2 'unicorn)
 
 (define (downup wd)
   (if (= (count wd) 1)
