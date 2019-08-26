@@ -44,6 +44,7 @@
 
 (count-ums '(today um we are going to um talk about the combining um method))
 (count-ums3 '(what if we um do um this))
+(count-ums '(lets um do this thing um right now))
 
 ; 11.3
 
