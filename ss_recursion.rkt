@@ -267,7 +267,12 @@
       (se (first (bf sent))
           (evens (bf (bf sent))))))
 
+(trace evens)
+
 (evens '(got to get you into my life))
+(evens '(lucy in the sky with diamods))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; simplifying base case
 
