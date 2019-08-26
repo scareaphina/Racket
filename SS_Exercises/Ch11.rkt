@@ -98,3 +98,16 @@
 
 (countdown 10)
 (countdown 30)
+
+; 11.7
+
+(define (copies number word)
+  (if (= number 0)
+      '()
+      (se word (copies (- number 1) word))))
+
+(trace copies)
+
+(copies 1 'banana)
+(copies 2 'apple)
+(copies 10 'bam)
