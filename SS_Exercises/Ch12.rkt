@@ -53,6 +53,39 @@
 (exaggerate '(i feel sad today))
 (exaggerate '(i am sick))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(define (double n)
+  (* 2 n))
+
+(define (hyperbole sent)
+  (if (number? sent)
+      (double sent)
+      (cond ((equal? sent 'good) 'great)
+            ((equal? sent 'bad) 'terrible)
+            ((equal? sent 'small) 'tiny)
+            ((equal? sent 'sick) 'dying)
+            ((equal? sent 'big) 'huge)
+            ((equal? sent 'funny) 'hilarious)
+            ((equal? sent 'cute) 'adorable)
+            ((equal? sent 'pretty) 'transcendant)
+            ((equal? sent 'sad) 'tragic)
+            ((equal? sent 'hurt) 'broken)
+            (else sent))))
+
+(define (exaggerate sent)
+  (if (empty? sent)
+      '()
+      (se (hyperbole (first sent))
+          (exaggerate (bf sent)))))
+
+(trace exaggerate)
+
+(exaggerate '(i ate 3 potstickers))
+(exaggerate '(the chow fun is great here))
+(exaggerate '(i am sick))
+(exaggerate '(my cat is so cute))
+
 ; 12.7
 
 ;; if i use their helper, it breaks when there's an unexpected entry.
