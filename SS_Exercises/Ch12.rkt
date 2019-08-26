@@ -11,6 +11,19 @@
 (acronym '(bananas are good))
 (acronym '(a))
 
+;;;;;;;;;;;;;;;
+
+(define (acronym sent)
+  (if (= (count sent) 0)
+      ""
+      (word (first (first sent))
+	    (acronym (bf sent)))))
+
+(trace acronym)
+
+(acronym '(working on simply scheme))
+(acronym '(knocking it out of the park))
+
 ; 12.5
 
 (define (double n)
