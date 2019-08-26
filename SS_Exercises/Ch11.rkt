@@ -80,19 +80,21 @@
 ; 11.5
 
 (define (initials sent)
-  (every first sent))
+  (se (every first sent)))
+
+(trace initials)
 
 (initials '(if i needed someone))
-
-(initials '(find me somebody to love))
+(initials '(are you gonna be my girl))
 
 ; 11.6
 
 (define (countdown number)
   (if (= number 0)
-      'BLASTOFF!
+      'blastoff!
       (cons number (countdown (- number 1)))))
 
-(countdown 15)
+(trace countdown)
 
-(countdown 5)
+(countdown 10)
+(countdown 30)
