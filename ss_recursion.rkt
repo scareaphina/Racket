@@ -165,24 +165,28 @@
 ;  (se (bl (bl wd))
 ;      (letter-pairs3 (bf wd))))
 
-;(trace letter-pairs4)
-
-;(letter-pairs4 'cats)
-
 ;(define (letter-pairs5 wd)
 ;  (se (bl (bl wd))
 ;      (letter-pairs4 (bf wd))))
 
-;(letter-pairs5 'bagel)
-
 (define (first-two wd)
   (word (first wd) (first (bf wd))))
+
+(trace first-two)
+
+(first-two 'unicorn)
 
 (define (letter-pairs4 wd)
   (se (first-two wd) (letter-pairs3 (bf wd))))
 
 (define (letter-pairs5 wd)
   (se (first-two wd) (letter-pairs4 (bf wd))))
+
+(trace letter-pairs4)
+(trace letter-pairs5)
+
+(letter-pairs4 'cats)
+(letter-pairs5 'bagel)
 
 (define (letter-pairs wd)
   (if (<= (count wd) 1)
