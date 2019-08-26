@@ -188,6 +188,9 @@
 (letter-pairs4 'cats)
 (letter-pairs5 'bagel)
 
+(define (first-two wd)
+  (word (first wd) (first (bf wd))))
+
 (define (letter-pairs wd)
   (if (<= (count wd) 1)
       '()
@@ -196,6 +199,7 @@
 
 (trace letter-pairs)
 
+(letter-pairs 'alphabet)
 (letter-pairs 'bagel)
 (letter-pairs 'elephant)
 (letter-pairs '3l3v3n)
