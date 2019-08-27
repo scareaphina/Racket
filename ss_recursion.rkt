@@ -371,6 +371,21 @@
 
 ;;;;;;;;;;;;;;;
 
+; the every pattern
+
+(define (square x)
+  (* x x))
+
+(define (square-sent sent)
+  (if (empty? sent)
+      '()
+      (se (square (first sent))
+          (square-sent (bf sent)))))
+
+(trace square-sent)
+
+(square-sent '(3 9 12))
+
 (define (pigl wd)
   (if (member? (first wd) 'aeiou)
       (word wd 'ay)
@@ -381,6 +396,10 @@
       '()
       (se (pigl (first sent))
           (pigl-sent (bf sent)))))
+
+(trace pigl-sent)
+
+(pigl-sent '(lucy in the sky with diamonds))
 
 ;;;;;;;;;;;;;;;
 
