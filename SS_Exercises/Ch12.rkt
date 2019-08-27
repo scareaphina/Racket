@@ -169,6 +169,25 @@
 (numbers '(i plan on visiting 12 countries in 2 years))
 (numbers '(i have never seen that before))
 
+;;;;;;;;
+
+(define (find-number sent)
+  (if (number? sent)
+      sent
+      '()))
+
+(define (numbers sent)
+  (if (empty? sent)
+      '()
+      (se (find-number (first sent))
+          (numbers (butfirst sent)))))
+
+(trace numbers)
+
+(numbers '(76 trombones and 110 cornets))
+(numbers '(i have 2 cats))
+(numbers '(i do not have any numbers))
+
 ; 12.9
 
 (define (real-word? wd)
