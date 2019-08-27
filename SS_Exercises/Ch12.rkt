@@ -103,7 +103,7 @@
 
 (spell-number 1981)
 (spell-number 18460)
-(spell-number 'apple) ; +: contract violation expected: number? given: 'a argument position: 2nd other arguments...:
+(spell-number 'apple) ; +: contract violation expected: number? given: 'a argument position: 2nd other arguments...
 
 ;;;;
 
@@ -134,6 +134,23 @@
 (spell-number 1981)
 (spell-number 18460)
 (spell-number 'apple)
+
+;;;;;;
+
+(define (spell-digit digit)
+  (item (+ 1 digit)
+        '(zero one two three four five six seven eight nine)))
+
+(define (spell-number n)
+  (if (empty? n)
+      '()
+      (se (spell-digit (first n))
+          (spell-number (bf n)))))
+
+(trace spell-number)
+
+(spell-number 1990)
+(spell-number 1029384756)
 
 ; 12.8
 
