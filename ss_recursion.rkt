@@ -438,6 +438,8 @@
          (word (first wd) (keep-vowels (bf wd))))
         (else (keep-vowels (bf wd)))))
 
+(trace keep-vowels)
+
 (keep-vowels 'napoleon)
 
 ;;;;;;;;;;;;;;;;;;;
