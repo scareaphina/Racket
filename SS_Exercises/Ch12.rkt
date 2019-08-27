@@ -240,3 +240,15 @@
 
 (remove 'the '(the song love of the loved by the beatles))
 (remove 'love '(the song love of the loved by the beatles))
+
+; 12.11
+
+(define (count sent)
+  (if (empty? sent)
+      0
+      (+ 1 (count (bf sent)))))
+
+(trace count)
+
+(count 'banana)
+(count '(i am a test))
