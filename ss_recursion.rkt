@@ -327,6 +327,7 @@
   (word wd wd))
 
 (trace double)
+
 (double 'frozen)
 
 (double (double (double 'yum)))
@@ -334,13 +335,14 @@
 (untrace double)
 
 (define (downup wd)
-  (if (= ( count wd) 1)
+  (if (= (count wd) 1)
       (se wd)
       (se wd (downup (bl wd)) wd)))
 
 (trace downup)
 
 (downup 'trace)
+(downup 'elephant)
 
 (untrace downup)
 
