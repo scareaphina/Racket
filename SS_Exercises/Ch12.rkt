@@ -207,6 +207,27 @@
 (real-words '(if i had a million dollars))
 (real-words '(the song love of the loved by the beatles))
 
+;;;;;;;;;;;;
+
+(define (real-word? wd)
+  (not (member? wd '(a the an in of and for to with))))
+
+(define (return-real-word wd)
+  (if (real-word? wd)
+      wd
+      '()))
+
+(define (real-words sent)
+  (if (empty? sent)
+      '()
+      (se (return-real-word (first sent))
+          (real-words (bf sent)))))
+
+(trace real-words)
+
+(real-words '(it was the best of times it was the worst of times))
+(real-words '(the cats have the zooms and it is loud))
+
 ; 12.10
 
 (define (remove word sent)
