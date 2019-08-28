@@ -185,6 +185,30 @@
 (expand '(4 calling birds 3 french hens))
 (expand '(the 7 samurai))
 
+;;;;
+
+(define (double-wd times word)
+  (if (= times 0)
+      '()
+      (se word (double-wd (- times 1) word))))
+
+(define (expand sent)
+  (if (empty? sent)
+      sent
+      (let ((f (first sent))
+            (rest (bf sent)))
+        (if (and (number? f)
+                 (> (count sent) 1))
+            (se (double-wd f (first rest))
+                (expand (bf rest)))
+            (se f (expand rest))))))
+
+(trace expand)
+
+(expand '(4 calling birds 3 french hens))
+(expand '(the seven samurai))
+(expand '(the 7 samurai))
+
 ; 14.9
 
 (define (helper x word sent)
