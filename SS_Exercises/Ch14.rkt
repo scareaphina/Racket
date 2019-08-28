@@ -242,3 +242,19 @@
 (location 'me '(you never give me your money))
 (location 'art '(the art of agile development))
 (location 'man '(oh what a piece of work is man))
+
+; 14.11
+
+(define (remove-adjacent-duplicates sent)
+  (if (<= (count sent) 1)
+      sent
+      (se
+       (if (equal? (first sent) (first (bf sent)))
+           '()
+           (first sent))
+       (remove-adjacent-duplicates (bf sent)))))
+
+(trace remove-adjacent-duplicates)
+
+(remove-adjacent-duplicates '(y a b b a d a b b a d o o))
+(remove-adjacent-duplicates '(yeah yeah yeah))
