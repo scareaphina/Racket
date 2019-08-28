@@ -258,3 +258,23 @@
 
 (remove-adjacent-duplicates '(y a b b a d a b b a d o o))
 (remove-adjacent-duplicates '(yeah yeah yeah))
+
+; 14.12
+
+(define (square x)
+  (* x x))
+
+(define (helper a rest)
+  (cond ((empty? rest) #t)
+        ((not (= (square a) (first rest))) #f)
+        (else (helper (first rest) (bf rest)))))
+
+(define (progressive-squares? sent)
+  (if (< (count sent) 2)
+      #t
+      (helper (first sent) (bf sent))))
+
+(trace progressive-squares?)
+
+(progressive-squares? '(3 9 81 6561))
+(progressive-squares? '(25 36 49 64))
