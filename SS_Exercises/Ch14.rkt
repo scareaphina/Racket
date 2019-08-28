@@ -75,6 +75,18 @@
 (odds '(ob la di ob la da))
 (odds '(this is how we do this))
 
+;;;;
+
+(define (odds sent)
+  (cond ((empty? sent) '())
+        ((odd? (count sent))
+         (se (first sent) (odds (bf sent))))
+        (else (odds (bf sent)))))
+
+(trace odds)
+
+(odds '(i lost my little girl))
+
 ; 14.5
 
 ;; saving this first attempt because it made me laugh and it was very close to my final answer
