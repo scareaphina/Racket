@@ -111,6 +111,19 @@
 
 (letter-count '(lucy in the sky with diamonds))
 
+;;;;
+
+(define (letter-count sent)
+  (if (empty? sent)
+      0
+      (+ (count (first sent))
+         (letter-count (bf sent)))))
+
+(trace letter-count)
+
+(letter-count '(this is a test))
+(letter-count '(this is real and you are completely unprepared))
+
 ; 14.6
 
 (define (member? wd sent)
