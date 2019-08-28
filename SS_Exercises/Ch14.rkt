@@ -49,16 +49,7 @@
 
 ; 14.3
 
-(define (remdup sent)
-  (cond ((empty? sent) sent)
-        ((member? (first sent) sent)
-         (first sent) remdup (bf sent))
-        (else (remdup (bf sent)))))
 
-(trace remdup)
-
-(remdup '(ob la di ob la da))
-(remdup '(this is how we do this))
 
 ; 14.4
 
