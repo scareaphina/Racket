@@ -35,6 +35,18 @@
 (up 'town)
 (up 'banana)
 
+;;;;
+
+(define (up wd)
+  (if (= (count wd) 1)
+      (se wd)
+      (se (up (bl wd)) wd)))
+
+(trace up)
+
+(up 'town)
+(up 'unicorn)
+
 ; 14.3
 
 (define (remdup sent)
