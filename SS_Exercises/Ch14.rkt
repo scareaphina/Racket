@@ -226,3 +226,19 @@
 (location 'me '(you never give me your money))
 (location 'you '(this is real and you are completely unprepared))
 (location 'bad '(good omens))
+
+;;;;
+
+(define (helper num word sent)
+  (if (empty? sent)
+      '(not found)
+      (if (equal? word (first sent))
+          num
+          (helper (+ num 1) word (bf sent)))))
+
+(define (location word sent)
+  (helper 1 word sent))
+
+(location 'me '(you never give me your money))
+(location 'art '(the art of agile development))
+(location 'man '(oh what a piece of work is man))
