@@ -629,6 +629,12 @@
 	((equal? wd (first sent)) (bf sent))
 	(else (se (first sent) (remove-once wd (bf sent))))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; advanced recursion
+
+; sort
+
 (trace sort)
 (trace earliest-helper)
 
@@ -647,7 +653,3 @@
 (trace from-binary)
 
 (from-binary 1101)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-; advanced recursion
