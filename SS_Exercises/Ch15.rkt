@@ -33,3 +33,23 @@
 
 (substrings 'mississippi)
 (substrings 'brat)
+
+; 15.4
+
+(define (diminish wd)
+  (if (empty? wd)
+      '()
+      (se wd (diminish (bl wd)))))
+
+(define (substrings wd)
+  (if (empty? wd)
+      (se "")
+      (se (diminish wd) (substrings (bf wd)))))
+
+(define (substring? a b)
+  (member? a (substrings b)))
+
+(trace substring?)
+
+(substring? 'ssip 'mississippi)
+(substring? 'misip 'mississippi)
