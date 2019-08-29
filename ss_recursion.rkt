@@ -688,3 +688,26 @@
 (trace merge)
 
 (merge '(cause ive been putting) '(out fires with gasoline))
+
+; subsets
+
+(define (prepend-every letter sent)
+  (if (empty? sent)
+      '()
+      (se (word letter (first sent))
+          (prepend-every letter (bf sent)))))
+
+(trace prepend-every)
+
+(prepend-every 'b '(and ye shall be there also anathema))
+
+(define (subsets wd)
+  (if (empty? wd)
+      (se "")
+      (let ((smaller (subsets (bf wd))))
+        (se smaller
+            (prepend-every (first wd) smaller)))))
+
+(trace subsets)
+
+(subsets 'rat)
