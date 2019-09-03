@@ -287,6 +287,22 @@
 (remove 'the '(the song love of the loved by the beatles))
 (remove 'love '(the song love of the loved by the beatles))
 
+;;;;
+
+(define (remove wd sent)
+  (if (empty? sent)
+      sent
+      (se (if (equal? (first sent) wd)
+              '()
+              (first sent))
+          (remove wd (bf sent)))))
+
+(trace remove)
+
+(remove 'the '(the song love of the loved by the beatles))
+(remove 'love '(say you love love me forever))
+(remove 'never '(never stop never whatever))
+
 ; 12.11
 
 (define (count sent)
