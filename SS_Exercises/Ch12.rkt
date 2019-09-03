@@ -314,3 +314,17 @@
 
 (count 'banana)
 (count '(i am a test))
+
+;;;;
+
+(define (count sent)
+  (if (empty? sent)
+      0
+      (+ 1 (count (bf sent)))))
+
+(trace count)
+
+(count '(i have two cats))
+(count '(runaway train))
+(count 'wicked)
+(count 'divine)
