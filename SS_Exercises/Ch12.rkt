@@ -215,6 +215,25 @@
 (numbers '(i have 2 cats))
 (numbers '(i do not have any numbers))
 
+;;;;;;;;;
+
+; 5 minute solve! i'm really getting this!
+
+(define (find-num sent)
+  (if (number? sent)
+      sent
+      '()))
+
+(define (numbers sent)
+  (if (empty? sent)
+      '()
+      (se (find-num (first sent))
+          (numbers (bf sent)))))
+
+(trace numbers)
+
+(numbers '(76 trombones and 110 cornets))
+
 ; 12.9
 
 (define (real-word? wd)
