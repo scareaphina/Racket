@@ -152,6 +152,33 @@
 (spell-number 1990)
 (spell-number 1029384756)
 
+;;;;;;;;;
+
+; solved this in 5 minutes this time around
+
+(define (num-help sent)
+  (cond ((equal? sent 0) 'zero)
+        ((equal? sent 1) 'one)
+        ((equal? sent 2) 'two)
+        ((equal? sent 3) 'three)
+        ((equal? sent 4) 'four)
+        ((equal? sent 5) 'five)
+        ((equal? sent 6) 'six)
+        ((equal? sent 7) 'seven)
+        ((equal? sent 8) 'eight)
+        ((equal? sent 9) 'nine)
+        (else 'huh?)))
+
+(define (spell-number sent)
+  (if (empty? sent)
+      '()
+      (se (num-help (first sent))
+          (spell-number (bf sent)))))
+
+(trace spell-number)
+
+(spell-number 1990)
+
 ; 12.8
 
 (define (get-number n)
