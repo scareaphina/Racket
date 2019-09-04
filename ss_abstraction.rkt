@@ -16,3 +16,14 @@
 (trace order)
 
 (order 'vanilla)
+
+
+
+(cons 'for '(no one))
+(cons 'julia '())
+
+(append '(get back) '(the word))
+
+(list '(i am) '(the walrus))
+(cons '(i am) '(the walrus))
+(append '(i am) '(the walrus))
