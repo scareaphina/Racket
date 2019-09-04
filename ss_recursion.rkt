@@ -724,3 +724,8 @@
 (match '(*start me *end) '(please please me))
 (match '(mean mr mustard) '(mean mr mustard))
 (match '(*start me *end) '(in my life))
+
+(match '(!twice !other !twice) '(cry baby cry))
+(match '(!twice !other !twice) '(please please me))
+
+(match '(*front *back) '(your mother should know))
