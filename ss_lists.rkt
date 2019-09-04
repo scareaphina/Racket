@@ -112,3 +112,10 @@
 (reduce (lambda (list1 list2) (list (+ (car list1) (car list2))
                                     (+ (cadr list1) (cadr list2))))
         '((1 2) (30 40) (500 600)))
+
+; other primatives for lists
+
+(member 'd '(a b c d e f g))
+(member 'h '(a b c d e f g))
+
+(list-ref '(happiness is a warm gun) 3)
