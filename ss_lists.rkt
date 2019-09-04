@@ -1,3 +1,5 @@
+; abstraction
+
 (sentence 'she (word 'run 's))
 (sentence 'she (word 'walk 's))
 (sentence 'she (word 'program 's))
@@ -5,7 +7,7 @@
 (define (third-person verb)
   (sentence 'she (word verb 's)))
 
-
+; lists
 
 (define (order flavor)
   (if (member? flavor
@@ -17,7 +19,7 @@
 
 (order 'vanilla)
 
-
+; selectors and constructors
 
 (cons 'for '(no one))
 (cons 'julia '())
