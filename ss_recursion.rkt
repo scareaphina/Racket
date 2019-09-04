@@ -711,3 +711,16 @@
 (trace subsets)
 
 (subsets 'rat)
+
+; pattern matcher
+
+(trace match)
+
+(match '(* me *) '(please please me))
+(match '(* me *) '(love me do))
+(match '(* me *) '(in my life))
+
+(match '(*start me *end) '(love me do))
+(match '(*start me *end) '(please please me))
+(match '(mean mr mustard) '(mean mr mustard))
+(match '(*start me *end) '(in my life))
