@@ -140,3 +140,19 @@
     (if record
         (cadr record)
         '(parlez-vous anglais?))))
+
+; functions that take variable numbers of arguments
+
+(define (increasing? number . rest-of-numbers)
+  (cond ((null? rest-of-numbers) #t)
+        ((> (car rest-of-numbers) number)
+         (apply increasing? rest-of-numbers))
+        (else #f)))
+
+(trace increasing?)
+
+(increasing? 4 12 82)
+(increasing? 12 4 82 107)
+
+(+ 3 4 5)
+(apply + '(3 4 5))
