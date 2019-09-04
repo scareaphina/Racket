@@ -87,3 +87,28 @@
   (if (null? (cdr sent))
       '()
       (cons (car sent) (butlast (cdr sent)))))
+
+; higher-order functions
+
+(define (square n)
+  (* n n))
+
+(map square '(9 8 7 6))
+(map (lambda (x) (se x x)) '(rocky raccoon))
+(every (lambda (x) (se x x)) '(rocky raccoon))
+(map car '((john lennon) (paul mccartney) (george harrison) (ringo starr)))
+(map even? '(9 8 7 6))
+; (map (lambda (x) (word x x)) 'rain)
+
+(filter (lambda (flavor) (member? 'swirl flavor))
+        '((rum raisin) (root beer swirl) (rocky road) (fudge swirl)))
+
+(filter word? '((ultra chocolate) ginger lychee (raspberry sherbert)))
+
+(filter (lambda (nums) (= (car nums) (cadr nums)))
+        '((2 3) (4 4) (5 6) (7 8) (9 9)))
+
+(reduce * '(4 5 6))
+(reduce (lambda (list1 list2) (list (+ (car list1) (car list2))
+                                    (+ (cadr list1) (cadr list2))))
+        '((1 2) (30 40) (500 600)))
