@@ -119,3 +119,24 @@
 (member 'h '(a b c d e f g))
 
 (list-ref '(happiness is a warm gun) 3)
+
+; association lists
+
+(assoc 'george
+       '((john lennon) (paul mccartney) (george harrison) (ringo starr)))
+
+(assoc 'x '((i 1) (v 5) (x 10) (l 50) (c 100) (d 500) (m 1000)))
+
+(assoc 'ringo '((mick jagger) (keith richards) (brian jones) (charlie watts) (bill wyman)))
+
+(define dictionary
+  '((window fenetre) (book livre) (computer ordinateur)
+    (house maison) (closed ferme) (pate pate) (liver foie)
+    (faith foi) (weekend (fin de semaine))
+    ((practical joke) attrape) (pal copain)))
+
+(define (translate wd)
+  (let ((record (assoc wd dictionary)))
+    (if record
+        (cadr record)
+        '(parlez-vous anglais?))))
