@@ -71,3 +71,19 @@
 ; don't make the mistake of reading cadr as meaning "first take the car and then the cdr" it means "take the car of the cdr"
 
 ; most commonly used is cadr, which takes the second element of a list, caddr, which selects the third element, and cadddr, which selects the forth
+
+(define (first sent)
+  (car sent))
+
+(define (last sent)
+  (if (null? (cdr sent))
+      (car sent)
+      (last (cdr sent))))
+
+(define (butfirst sent)
+  (cdr sent))
+
+(define (butlast sent)
+  (if (null? (cdr sent))
+      '()
+      (cons (car sent) (butlast (cdr sent)))))
