@@ -193,3 +193,13 @@ louder
 (cdr '(elmer fudd daffy duck))
 
 (and (= 1 2) (= 10 (/ 1 0)))
+
+; find the squid!
+
+(define y '(clam squid octopus))
+
+(car (cdr y))
+
+(define z '(clam starfish (squid octopus) mollusk))
+
+(car (caddr z))
