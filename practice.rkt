@@ -259,3 +259,10 @@ louder
         ((> b a) b)
         (else a)))
 
+; Create a function three(w) that has the value -1 if w < 0, and has the value 3.5 if 0 <= w and w <= 4, and has the value 7 otherwise.
+
+(define (three w)
+  (cond ((< w 0) -1)
+        ((<= w 0) 3.5)
+        ((<= w 4) 3.5)
+        (else 7)))
