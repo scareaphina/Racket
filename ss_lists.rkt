@@ -209,3 +209,10 @@
 (deep-appearances 'mathematicians the-book-structure)
 
 (deep-appearances 'foo '((a) b))
+
+(define (deep-appearances wd structure)
+  (cond ((equal? wd structure) 1)
+        ((word? structure) 0)
+        ((null? structure) 0)
+        (else (+ (deep-appearances wd (car structure))
+                 (deep-appearances wd (cdr structure))))))
