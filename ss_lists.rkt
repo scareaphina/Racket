@@ -216,3 +216,21 @@
         ((null? structure) 0)
         (else (+ (deep-appearances wd (car structure))
                  (deep-appearances wd (cdr structure))))))
+
+(define (pigl wd)
+  (if (member? (first wd) 'aeiou)
+      (word wd 'ay)
+      (pigl (word (butfirst wd) (first wd)))))
+
+(define (deep-pigl structure)
+  (cond ((word? structure) (pigl structure))
+        ((null? structure) '())
+        (else (cons (deep-pigl (car structure))
+                    (deep-pigl (cdr structure))))))
+
+(trace deep-pigl)
+
+(deep-pigl '((this is (a structure of (words)) with) (a (peculiar) shape)))
+
+; Compare deep-pigl with an every-pattern list recursion such as praise. Both look like
+; (cons (something (car argument)) (something (cdr argument)))
