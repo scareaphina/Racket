@@ -251,3 +251,11 @@ louder
 
 (define (circle-area radius)
   (* 3.14159 (square radius)))
+
+; Create the function "max2" which will return the larger of its two numerical arguments, or either of them if they're equal.
+
+(define (max2 a b)
+  (cond ((> a b) a)
+        ((> b a) b)
+        (else a)))
+
