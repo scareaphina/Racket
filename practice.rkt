@@ -266,3 +266,32 @@ louder
         ((<= w 0) 3.5)
         ((<= w 4) 3.5)
         (else 7)))
+
+; Write a function SYLLABLES that takes a word as argument and returns the number of syllables in the word. For our purposes, the number of syllables is equal to the number of vowels, except that consecutive vowels only count as one syllable:
+
+; define vowel
+
+(define (vowel? letter)
+  (member? letter '(a e i o u)))
+
+; helper function for adding vowels
+; add one for each vowel found 
+
+(define (syllable-helper sent)
+  (cond ((empty? sent) '())
+        ((vowel? (first sent))
+         (+ 1 (syllable-helper (bf sent))))))
+
+; add 1 for every vowel found
+
+(define (syllables sent)
+  (if (empty? sent)
+      '()
+      (syllable-helper (first sent)
+                       (syllables (bf sent)))))
+
+(trace syllables)
+
+(syllables 'banana)
+(syllables 'aardvark)
+(syllables 'cloud)
