@@ -207,3 +207,5 @@
 (deep-appearances 'the '(the man in the moon ate the potstickers))
 
 (deep-appearances 'mathematicians the-book-structure)
+
+(deep-appearances 'foo '((a) b))
