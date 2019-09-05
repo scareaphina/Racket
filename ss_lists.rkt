@@ -156,3 +156,28 @@
 
 (+ 3 4 5)
 (apply + '(3 4 5))
+
+; recursion on arbitrary structured lists
+
+; the long way
+
+(define (appearances-in-book wd book)
+  (reduce + (map (lambda (chapter) (appearances-in-chapter wd chapter))
+		 book)))
+
+(define (appearances-in-chapter wd chapter)
+  (reduce + (map (lambda (section) (appearances-in-section wd section))
+		 chapter)))
+
+(define (appearances-in-section wd section)
+  (reduce + (map (lambda (paragraph)
+		   (appearances-in-paragraph wd paragraph))
+		 section)))
+
+(define (appearances-in-paragraph wd paragraph)
+  (reduce + (map (lambda (sent) (appearances-in-sentence wd sent))
+		 paragraph)))
+
+(define (appearances-in-sentence given-word sent)
+  (length (filter (lambda (sent-word) (equal? sent-word given-word))
+                  sent)))
