@@ -221,3 +221,15 @@ louder
 (sum '(1 4 5 6 7 8))
 (sum '(1 1 1 1 1 1))
 (sum '(1 2 3 4 5 6))
+
+; define a procedure to find the length of a list
+
+(define (mylength sent)
+  (if (empty? sent)
+      0
+      (count sent)))
+
+(mylength '(lucy in the sky with diamonds))
+(mylength '(killin it))
+(mylength 'bike)
+(mylength '(1 5 42 9 129492))
