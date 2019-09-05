@@ -233,3 +233,8 @@ louder
 (mylength '(killin it))
 (mylength 'bike)
 (mylength '(1 5 42 9 129492))
+
+; define a function that returns an integer plus 1
+
+(define (inc n)
+  (+ n 1))
