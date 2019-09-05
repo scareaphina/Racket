@@ -181,3 +181,29 @@
 (define (appearances-in-sentence given-word sent)
   (length (filter (lambda (sent-word) (equal? sent-word given-word))
                   sent)))
+
+; the short cut
+
+(define (appearances-in-sentence wd sent)
+  (reduce + (map (lambda (wd2) (appearances-in-word wd wd2))
+                 sent)))
+
+(define (appearances-in-word wd wd2)
+  (if (equal? wd wd2) 1 0))
+
+(define (deep-appearances wd structure)
+  (if (word? structure)
+      (if (equal? structure wd) 1 0)
+      (reduce +
+              (map (lambda (sublist) (deep-appearances wd sublist))
+                   structure))))
+
+(trace deep-appearances)
+
+(deep-appearances
+ 'the
+ '(((the man) in ((the) moon)) ate (the) potstickers))
+
+(deep-appearances 'the '(the man in the moon ate the potstickers))
+
+(deep-appearances 'mathematicians the-book-structure)
