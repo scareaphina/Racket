@@ -209,3 +209,15 @@ louder
 
 (average 3 5)
 (average 150 200)
+
+; design a recursive procedure that adds together all the numbers in a list
+
+(define (sum sent)
+  (if (empty? sent)
+      0
+      (+ (first sent)
+         (sum (bf sent)))))
+
+(sum '(1 4 5 6 7 8))
+(sum '(1 1 1 1 1 1))
+(sum '(1 2 3 4 5 6))
