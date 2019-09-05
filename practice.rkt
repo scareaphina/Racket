@@ -238,3 +238,16 @@ louder
 
 (define (inc n)
   (+ n 1))
+
+; Create the function "mean2" which returns the average of its two numeric arguments.
+
+(define (mean2 x y)
+  (/ (+ x y) 2))
+  
+ ; Create the function "circle-area" that will be given the radius of a circle and will return its area. Use 3.14159 as the value of PI. 
+ 
+ (define (square n)
+  (* n n))
+
+(define (circle-area radius)
+  (* 3.14159 (square radius)))
