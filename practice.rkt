@@ -182,3 +182,14 @@ pie ; returns 3
 louder
 
 ; returns #<procedure:louder>
+
+; random exercises
+
+(* 2 (+ 4 5))
+
+(= 3 (+ 1 3))
+
+(car '(elmer fudd daffy duck))
+(cdr '(elmer fudd daffy duck))
+
+(and (= 1 2) (= 10 (/ 1 0)))
