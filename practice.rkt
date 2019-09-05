@@ -269,17 +269,23 @@ louder
 
 ; Write a function SYLLABLES that takes a word as argument and returns the number of syllables in the word. For our purposes, the number of syllables is equal to the number of vowels, except that consecutive vowels only count as one syllable:
 
+#lang simply-scheme
+
 ; define vowel
 
 (define (vowel? letter)
   (member? letter '(a e i o u)))
+
+(define (double letter)
+  (word letter letter))
 
 ; helper function for adding vowels
 ; add one for each vowel found 
 
 (define (syllable-helper sent)
   (cond ((empty? sent) '())
-        ((vowel? (first sent))
+        ((or (vowel? (first sent))
+             (double vowel? sent))
          (+ 1 (syllable-helper (bf sent))))))
 
 ; add 1 for every vowel found
