@@ -203,3 +203,9 @@ louder
 (define z '(clam starfish (squid octopus) mollusk))
 
 (car (caddr z))
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(average 3 5)
+(average 150 200)
