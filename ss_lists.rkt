@@ -21,15 +21,26 @@
 
 ; selectors and constructors
 
+(list (+ 2 3) 'squash (= 2 2) (list 4 5) remainder 'zucchini)
+
 (cons 'for '(no one))
+
 (cons 'julia '())
 
 (append '(get back) '(the word))
 
+; how list, cons, and append act differently
+
 (list '(i am) '(the walrus))
 (cons '(i am) '(the walrus))
+(cons 'i '(am the walrus))
 (append '(i am) '(the walrus))
 
+; When list is invoked with two arguments, it considers them to be two proposed elements for a new two-element list. List doesn't care whether the arguments are themselves lists, words, or anything else; it just creates a new list whose elements are the arguments.
+
+; Cons requires that its second argument be a list. Cons will extend that list to form a new list, one element longer than the original; the first element of the resulting list comes from the first argument to cons. In other words, when you pass cons two arguments, you get back a list whose car is the first argument to cons and whose cdr is the second argument.
+
+; Append of two arguments uses the elements of both arguments as elements of its return value.
 ; programming with lists
 
 (define (praise flavors)
