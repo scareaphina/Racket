@@ -278,14 +278,17 @@ louder
 (define (vowel? letter)
   (member? letter '(a e i o u)))
 
-(check-equal? (vowel? 'b) #f) ; this is the best thing ever
+(check-equal? (vowel? 'b) #f)
 (check-equal? (vowel? 'a) #t)
 (check-equal? (vowel? '1) #f)
 
-(define (double vowel)
-  (word vowel vowel))
+(define (double? sent)
+  (cond ((empty? sent) '())
+        ((vowel? (first sent)) #t)
+        (double? bf sent)))
 
-(check-equal? (double 'a) 'aa)
+(check-equal? (double? 'a) 'aa)
+(check-equal? (double? 'b) 'bb)
 
 ; helper function for adding vowels
 ; add one for each vowel found 
@@ -293,7 +296,7 @@ louder
 (define (syllable-helper sent)
   (cond ((empty? sent) '())
         ((or (vowel? (first sent))
-             (double vowel? sent))
+             (double? vowel? sent))
          (+ 1 (syllable-helper (bf sent))))))
 
 ; add 1 for every vowel found
