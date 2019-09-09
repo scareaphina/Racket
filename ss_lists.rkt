@@ -107,16 +107,25 @@
       '()
       (cons (car sent) (butlast (cdr sent)))))
 
-; higher-order functions
+; higher order functions
+
+; every = map
+; keep = filter
+; accumulate = reduce
 
 (define (square n)
   (* n n))
 
 (map square '(9 8 7 6))
+
 (map (lambda (x) (se x x)) '(rocky raccoon))
+
 (every (lambda (x) (se x x)) '(rocky raccoon))
+
 (map car '((john lennon) (paul mccartney) (george harrison) (ringo starr)))
+
 (map even? '(9 8 7 6))
+
 ; (map (lambda (x) (word x x)) 'rain)
 
 (filter (lambda (flavor) (member? 'swirl flavor))
