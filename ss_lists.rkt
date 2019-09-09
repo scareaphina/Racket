@@ -43,6 +43,8 @@
 ; Append of two arguments uses the elements of both arguments as elements of its return value.
 ; programming with lists
 
+; programming with lists
+
 (define (praise flavors)
   (if (null? flavors)
       '()
@@ -65,7 +67,8 @@
          (car (cdr (car dictionary))))
         (else (lookup wd (cdr dictionary)))))
 
-(trace translate)
+(check-equal? (translate 'fenetre) '(parlez-vous anglais?))
+(check-equal? (translate 'closed) 'ferme)
 
 (translate 'computer)
 (translate '(practical joke))
