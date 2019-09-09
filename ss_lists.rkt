@@ -86,7 +86,12 @@
 
 ; most commonly used is cadr, which takes the second element of a list, caddr, which selects the third element, and cadddr, which selects the forth
 
-(define (first sent)
+; the truth about sentences
+
+; scheme represents lists in a way that makes it easy to find the first element, but harder to find the last one
+; no primitive selectors for lists equivilant to last and butlast for sentences
+
+(define (first sent)         ;;; just for sentences
   (car sent))
 
 (define (last sent)
