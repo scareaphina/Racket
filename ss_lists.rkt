@@ -142,7 +142,9 @@
                                     (+ (cadr list1) (cadr list2))))
         '((1 2) (30 40) (500 600)))
 
-; other primatives for lists
+
+
+; other primatives for lists ;;;;;;; left off here
 
 (member 'd '(a b c d e f g))
 (member 'h '(a b c d e f g))
