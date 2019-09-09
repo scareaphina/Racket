@@ -1,12 +1,12 @@
+; lambda
+
 (define (add-three number)
   (+ number 3))
 
-(define (add-three-to-each sent)
-  (every add-three sent))
+;(define (add-three-to-each sent)
+;  (every add-three sent))
 
-(add-three-to-each '(1 9 9 2))
-
-; defining that first function just to use it once is tedious. use lambda!
+; inconvenient to define a helper we are only going to use for this procedure, so use lambda!
 
 (define (add-three-to-each sent)
   (every (lambda (number) (+ number 3)) sent))
