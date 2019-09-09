@@ -271,13 +271,21 @@ louder
 
 #lang simply-scheme
 
+(require rackunit)
+
 ; define vowel
 
 (define (vowel? letter)
   (member? letter '(a e i o u)))
 
-(define (double letter)
-  (word letter letter))
+(check-equal? (vowel? 'b) #f) ; this is the best thing ever
+(check-equal? (vowel? 'a) #t)
+(check-equal? (vowel? '1) #f)
+
+(define (double vowel)
+  (word vowel vowel))
+
+(check-equal? (double 'a) 'aa)
 
 ; helper function for adding vowels
 ; add one for each vowel found 
@@ -290,14 +298,14 @@ louder
 
 ; add 1 for every vowel found
 
-(define (syllables sent)
-  (if (empty? sent)
-      '()
-      (syllable-helper (first sent)
-                       (syllables (bf sent)))))
+;(define (syllables sent)
+;  (if (empty? sent)
+;      '()
+;      (syllable-helper (first sent)
+;                       (syllables (bf sent)))))
 
-(trace syllables)
+;(trace syllables)
 
-(syllables 'banana)
-(syllables 'aardvark)
-(syllables 'cloud)
+;(check-equal? (syllables 'banana) 3)
+;(check-equal? (syllables 'aardvark) 2)
+;(check-equal? (syllables 'cloud) 1)
