@@ -284,11 +284,12 @@ louder
 
 (define (double? sent)
   (cond ((empty? sent) '())
+        ((not (vowel? (first sent)))
+         (double? (bf sent)))
         ((vowel? (first sent)) #t)
         (double? bf sent)))
 
-(check-equal? (double? 'a) 'aa)
-(check-equal? (double? 'b) 'bb)
+(check-equal? (double? 'aa) #t)
 
 ; helper function for adding vowels
 ; add one for each vowel found 
@@ -296,8 +297,10 @@ louder
 (define (syllable-helper sent)
   (cond ((empty? sent) '())
         ((or (vowel? (first sent))
-             (double? vowel? sent))
+             (double? (vowel? sent)))
          (+ 1 (syllable-helper (bf sent))))))
+
+(check-equal? (syllable-helper 'banana) 3)
 
 ; add 1 for every vowel found
 
