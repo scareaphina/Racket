@@ -37,3 +37,15 @@
 (mystery '(a l p h a b e t))
 
 ; this function returns the reverse of a list it is given
+
+; 17.5
+
+(define (max2 a b)
+  (if (> b a) b a))
+
+(define (max3 num . rest)
+  (if (null? rest)
+      n
+      (apply max3
+             (cons (max2 (car rest))
+                   (cdr rest)))))
