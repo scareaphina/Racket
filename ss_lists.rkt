@@ -142,7 +142,6 @@
                                     (+ (cadr list1) (cadr list2))))
         '((1 2) (30 40) (500 600)))
 
-
 ; other primitives for lists
 
 (member 'd '(a b c d e f g))
@@ -159,7 +158,6 @@
 
 ; the equivilant of item is list-ref
 ; the equivilant of count is length and is the same as count except it doesn't work on words
-
 
 ; association lists
 
