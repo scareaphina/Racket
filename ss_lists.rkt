@@ -157,6 +157,10 @@
 
 (list-ref '(happiness is a warm gun) 3)
 
+; the equivilant of item is list-ref
+; the equivilant of count is length and is the same as count except it doesn't work on words
+
+
 ; association lists
 
 (assoc 'george
