@@ -184,8 +184,6 @@
 
 ; functions that take variable numbers of arguments
 
-; functions that take variable numbers of arguments
-
 (define (increasing? number . rest-of-numbers)
   (cond ((null? rest-of-numbers) #t)
         ((> (car rest-of-numbers) number)
@@ -233,7 +231,9 @@
 
 ; the short cut
 
-(define (appearances-in-sentence wd sent)
+; all of these are very similar. we can make them moreso by rewriting the last one
+
+(define (appearances-in-sentence1 wd sent)
   (reduce + (map (lambda (wd2) (appearances-in-word wd wd2))
                  sent)))
 
