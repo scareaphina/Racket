@@ -172,15 +172,17 @@
 
 (define dictionary
   '((window fenetre) (book livre) (computer ordinateur)
-    (house maison) (closed ferme) (pate pate) (liver foie)
-    (faith foi) (weekend (fin de semaine))
-    ((practical joke) attrape) (pal copain)))
+                     (house maison) (closed ferme) (pate pate) (liver foie)
+                     (faith foi) (weekend (fin de semaine))
+                     ((practical joke) attrape) (pal copain)))
 
 (define (translate wd)
   (let ((record (assoc wd dictionary)))
     (if record
         (cadr record)
         '(parlez-vous anglais?))))
+
+(check-equal? (translate 'book) 'livre)
 
 ; functions that take variable numbers of arguments
 
