@@ -49,3 +49,17 @@
       (apply max
              (cons (max2 (car sent))
                    (cdr sent)))))
+
+; 17.6
+
+(define (append2 a b)
+  (if (null? b)
+      a
+      (append2 (cons (car b) a) (cdr b))))
+
+(define (append3 a . sent)
+  (if (null? sent)
+      a
+      (apply append3
+             (cons (append2 a (car sent))
+                   (cdr sent)))))
