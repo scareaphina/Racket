@@ -186,6 +186,8 @@
 
 ; functions that take variable numbers of arguments
 
+; functions that take variable numbers of arguments
+
 (define (increasing? number . rest-of-numbers)
   (cond ((null? rest-of-numbers) #t)
         ((> (car rest-of-numbers) number)
@@ -194,11 +196,17 @@
 
 (trace increasing?)
 
+(check-equal? (increasing? 4 12 82) #t)
+(check-equal? (increasing? 12 4 82 107) #f)
+
 (increasing? 4 12 82)
+
 (increasing? 12 4 82 107)
 
 (+ 3 4 5)
 (apply + '(3 4 5))
+
+(increasing? rest-of-numbers) ; doesn't work
 
 ; recursion on arbitrary structured lists
 
