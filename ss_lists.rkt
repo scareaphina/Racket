@@ -143,11 +143,17 @@
         '((1 2) (30 40) (500 600)))
 
 
-
-; other primatives for lists ;;;;;;; left off here
+; other primitives for lists
 
 (member 'd '(a b c d e f g))
+
 (member 'h '(a b c d e f g))
+
+; returns a list starting with the element equal to the first argument
+; doesn't have a question mark because it returns values other than #t and #f
+
+(d e f g)
+(#f)
 
 (list-ref '(happiness is a warm gun) 3)
 
