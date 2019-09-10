@@ -43,9 +43,9 @@
 (define (max2 a b)
   (if (> b a) b a))
 
-(define (max3 num . rest)
-  (if (null? rest)
+(define (max num . sent)
+  (if (null? sent)
       n
-      (apply max3
-             (cons (max2 (car rest))
-                   (cdr rest)))))
+      (apply max
+             (cons (max2 (car sent))
+                   (cdr sent)))))
