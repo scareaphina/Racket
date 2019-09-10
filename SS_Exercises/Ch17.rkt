@@ -74,3 +74,12 @@
 (check-equal? (sentencenew 'hello 'world) '(hello world))
 
 (sentencenew 'hello 'world)
+
+; 17.8
+
+(define (membernew wd sent)
+  (if (empty? sent)
+      #f
+      (if (equal? wd (car sent))
+          sent
+          (membernew wd (cdr sent)))))
