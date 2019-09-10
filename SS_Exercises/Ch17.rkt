@@ -63,3 +63,14 @@
       (apply append3
              (cons (append2 a (car sent))
                    (cdr sent)))))
+
+; 17.7
+
+(define (sentencenew first second)
+  (cond ((word? first) (sentencenew (list first) second))
+        ((word? second) (sentencenew first (list second)))
+        (else (append first second))))
+
+(check-equal? (sentencenew 'hello 'world) '(hello world))
+
+(sentencenew 'hello 'world)
