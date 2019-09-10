@@ -45,7 +45,7 @@
 
 (define (max num . sent)
   (if (null? sent)
-      n
+      num
       (apply max
              (cons (max2 (car sent))
                    (cdr sent)))))
