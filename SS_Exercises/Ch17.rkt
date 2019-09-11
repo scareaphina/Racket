@@ -83,3 +83,16 @@
       (if (equal? wd (car sent))
           sent
           (membernew wd (cdr sent)))))
+
+; 17.9
+
+(define (list-ref-new list position)
+  (cond ((empty? list) #f)
+        ((= position 0) (car list))
+        (else (list-ref-new (cdr list) (- position 1)))))
+
+(check-equal? (list-ref-new '(this morning is too morning) '4) 'morning)
+(check-equal? (list-ref-new '(1 2 3 4 5 6) '4) '5)
+
+(list-ref-new '(this morning is too morning) '4)
+(list-ref-new '(1 2 3 4 5 6) '4)
