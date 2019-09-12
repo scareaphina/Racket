@@ -190,3 +190,35 @@
         (first (first (butfirst sent)))))
 
 (two-first '(brian epstein))
+
+; 5.17
+
+(define (knight name)
+  (se '(sir) name))
+
+(knight 'powell)
+(knight 'malizia)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
