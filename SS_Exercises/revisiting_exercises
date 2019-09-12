@@ -68,7 +68,23 @@
 
 (fahr-to-cel 100)
 
+; 4.6
 
+(define (square n)
+  (* n n))
+
+(define (cube n)
+  (* n (square n)))
+
+(define (forth n)
+  (* n (cube n)))
+
+(forth 3)
+
+(define (forth1 n)
+  (* n (* n (* n (* n)))))
+
+(forth1 3)
 
 
 
