@@ -260,7 +260,15 @@
 (indef-article 'beatle)
 (indef-article 'album)
 
+; 6.9
 
+(define (thismany number wd)
+  (if (equal? number 1)
+      (se number wd)
+      (se number (word wd 's))))
+
+(thismany 1 'partridge)
+(thismany 3 'french-hen)
 
 
 
