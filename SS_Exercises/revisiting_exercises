@@ -224,6 +224,18 @@
 (query '(you are experienced))
 (query '(i should have known better))
 
+; 6.7
+
+(define (type-of sent)
+  (cond ((integer? sent) 'number)
+        ((sentence? sent) 'sentence)
+        ((word? sent) 'word)
+        ((boolean? sent) 'boolean)
+        (else '(type not found))))
+
+(type-of '(getting better))
+(type-of 'revolution)
+(type-of (= 3 3))
 
 
 
