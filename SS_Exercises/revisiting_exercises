@@ -115,7 +115,7 @@
 ; 5.2
 
 (define (f1 first second)
-  (se (car (cdr first))
+  (se (cadr first)
       (caddr first)
       (car second)
       (cadr second)))
