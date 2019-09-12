@@ -52,7 +52,21 @@
 ; have to define square ahead of time
 ; don't define a function in terms of another function in that format
 
+; 4.5
 
+; F=9⁄5C+32
+
+(define (cel-to-fahr celcius)
+  (+ (* (/ 9 5) celcius) 32))
+
+(cel-to-fahr 32)
+
+; C=5⁄9(F-32)
+
+(define (fahr-to-cel fahrenheit)
+  (* (/ 5 9) (- fahrenheit 32)))
+
+(fahr-to-cel 100)
 
 
 
