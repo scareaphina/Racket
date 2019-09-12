@@ -224,6 +224,16 @@
 (query '(you are experienced))
 (query '(i should have known better))
 
+; 6.6
+
+(define (teen? age)
+  (cond ((<= age 19)
+         (>= age 13) #t)
+        (else '(you are an adult))))
+
+(teen? 20)
+(teen? 14)
+
 ; 6.7
 
 (define (type-of sent)
