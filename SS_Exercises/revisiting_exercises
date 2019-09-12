@@ -86,7 +86,16 @@
 
 (forth1 3)
 
+; 4.7
 
+(define (square n)
+  (* n n))
+
+(define (absval arg)
+  (sqrt (square arg)))
+
+(absval 200)
+(absval .032)
 
 
 
