@@ -199,7 +199,13 @@
 (knight 'powell)
 (knight 'malizia)
 
+; 5.19
 
+(define (insert-and sent)
+  (se (bl sent) 'and (last sent)))
+
+(insert-and '(john bill wayne fred joey))
+(insert-and '(dave dee dozy beeky mick titch))
 
 
 
