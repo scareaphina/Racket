@@ -5,3 +5,20 @@
 ; (check-equal? (function variable(s)) desired result)
 
 ; some fresh approaches to old problems
+
+; 4.4
+
+(define (square n)
+  (* n n))
+
+(define (cube n)
+  (* n (square n)))
+
+(define (sphere-volume r)
+  (* (* (/ 4 3) 3.141592654)
+     (cube r)))
+
+(sphere-volume 3)
+
+; the problem was that the first part was not multiplying by the second part
+; also defining it with cube as a nested function makes it easier to read 
