@@ -170,3 +170,10 @@
 
 (two-first 'brian 'epstein)
 
+; 5.15
+
+(define (first-two sent)
+  (word (first sent) (first (bf sent))))
+
+(first-two 'cat)
+(first-two 'elephant)
