@@ -162,5 +162,11 @@
 (third '(lucy in the sky with diamonds))
 (third '(e l e p h a n t))
 
+; 5.15
 
+(define (two-first 1st 2nd)
+  (word (first 1st)
+        (first 2nd)))
+
+(two-first 'brian 'epstein)
 
