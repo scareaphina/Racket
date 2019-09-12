@@ -22,3 +22,47 @@
 
 ; the problem was that the first part was not multiplying by the second part
 ; also defining it with cube as a nested function makes it easier to read 
+
+(define (next x)
+  (+ x 1))
+
+(next 1)
+(next 3)
+
+; arithmetic goes first
+
+(define (square x)
+  (* x x))
+  
+; have to define with a variable
+
+(define (triangle-area base height)
+  (* 0.5 (* base height)))
+
+(triangle-area 3 4)
+
+; wrong variables
+
+(define (square x)
+  (* x x))
+
+(define (sum-of-squares x y)
+  (+ (square x) (square y)))
+
+; have to define square ahead of time
+; don't define a function in terms of another function in that format
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
