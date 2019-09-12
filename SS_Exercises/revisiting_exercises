@@ -122,6 +122,16 @@
 
 (f1 '(a b c) '(d e f))
 
+(define (f2 first second)
+  (se (cadr first)
+      (caddr first)
+      (car second)
+      (cadr second)
+      (word (car first)
+            (caddr second))))
+
+(f2 '(a b c) '(d e f))
+
 (define (f4 first second)
   (word (car (cdr first))
         (car (cdr second))))
