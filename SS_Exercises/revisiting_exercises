@@ -207,7 +207,14 @@
 (insert-and '(john bill wayne fred joey))
 (insert-and '(dave dee dozy beeky mick titch))
 
+; 5.20
 
+(define (middle-names sent)
+  (bl (bf sent)))
+
+(middle-names '(james paul mccartney))
+(middle-names '(bugs bunny))
+(middle-names '(john ronald raoul tolkien))
 
 
 
