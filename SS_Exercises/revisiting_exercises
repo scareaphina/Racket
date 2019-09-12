@@ -112,7 +112,21 @@
 (discount 10 5)
 (discount 29.90 50)
 
+; 5.2
 
+(define (f1 first second)
+  (se (car (cdr first))
+      (cdr (cdr first))
+      (car second)
+      (car (cdr second))))
+
+(f1 '(a b c) '(d e f))
+
+(define (f4 first second)
+  (word (car (cdr first))
+        (car (cdr second))))
+
+(f4 '(a b c) '(d e f))
 
 
 
