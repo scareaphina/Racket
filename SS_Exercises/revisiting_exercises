@@ -247,7 +247,18 @@
 (type-of 'revolution)
 (type-of (= 3 3))
 
+; 6.8
+        
+(define (vowel? sent)
+  (member? sent 'aeiou))
 
+(define (indef-article sent)
+  (if (vowel? (first sent))
+      (se 'an sent)
+  (se 'a sent)))
+
+(indef-article 'beatle)
+(indef-article 'album)
 
 
 
