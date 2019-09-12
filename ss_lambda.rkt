@@ -1,5 +1,14 @@
 ; lambda
 
+; lambda creates a function, define names it
+
+(define add1 (lambda (x) (+ x 1)))
+
+(add1 4)
+(5)
+
+;;;;;
+
 (define (add-three number)
   (+ number 3))
 
