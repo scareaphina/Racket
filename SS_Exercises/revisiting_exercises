@@ -116,9 +116,9 @@
 
 (define (f1 first second)
   (se (car (cdr first))
-      (cdr (cdr first))
+      (caddr first)
       (car second)
-      (car (cdr second))))
+      (cadr second)))
 
 (f1 '(a b c) '(d e f))
 
