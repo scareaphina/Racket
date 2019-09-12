@@ -97,7 +97,20 @@
 (absval 200)
 (absval .032)
 
+; 4.9
 
+(define (percentage amount)
+  (* amount .01))
+
+(percentage 5)
+(percentage 10)
+(percentage 200)
+
+(define (discount price percent)
+  (* price (percentage percent)))
+
+(discount 10 5)
+(discount 29.90 50)
 
 
 
