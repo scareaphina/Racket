@@ -216,7 +216,13 @@
 (middle-names '(bugs bunny))
 (middle-names '(john ronald raoul tolkien))
 
+; 5.21
 
+(define (query sent)
+  (se (first (bf sent)) (first sent) (bf sent) '?))
+
+(query '(you are experienced))
+(query '(i should have known better))
 
 
 
