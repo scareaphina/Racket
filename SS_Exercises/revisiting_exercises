@@ -184,3 +184,9 @@
   (word (first word1) (first word2)))
 
 (two-first 'brian 'epstein)
+
+(define (two-first sent)
+  (word (first (first sent))
+        (first (first (butfirst sent)))))
+
+(two-first '(brian epstein))
