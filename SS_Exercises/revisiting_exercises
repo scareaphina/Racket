@@ -278,7 +278,31 @@
 (sort2 '(5 7))
 (sort2 '(7 5))
 
+; 6.12
 
+(define (vowel? sent)
+  (member? sent '(aeiou)))
+
+(define (secondlast sent)
+  (last (bl sent)))
+
+(define (plural wd)
+  (cond
+    ((and
+      (equal? (last wd) 'y)
+      (vowel? (secondlast wd)))
+     (word wd 's))
+    ((equal? (last wd) 'y)
+         (word (bl wd) 'ies))
+        ((equal? (last wd) 'x)
+         (word wd 'es))
+        (else (word wd 's))))
+
+(plural 'boy)
+(plural 'beatle)
+(plural 'computer)
+(plural 'fly)
+(plural 'box)
 
 
 
