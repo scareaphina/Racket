@@ -1,7 +1,5 @@
 (require rackunit)
 
-; lists
-
 ; (check-equal? (function variable(s)) desired result)
 
 ; some fresh approaches to old problems
@@ -270,7 +268,15 @@
 (thismany 1 'partridge)
 (thismany 3 'french-hen)
 
+; 6.10
 
+(define (sort2 sent)
+  (if (>= (first sent) (last sent))
+      (se (last sent) (first sent))
+      sent))
+
+(sort2 '(5 7))
+(sort2 '(7 5))
 
 
 
