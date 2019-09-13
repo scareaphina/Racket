@@ -348,7 +348,17 @@
 (choose-beatles ends-vowel?)
 (choose-beatles even-count?)
 
+; 9.7
 
+(define (letterwords ltr wd)
+  (keep
+   (lambda (wd) (member? ltr wd)) wd))
+
+(trace letterwords)
+
+(letterwords 'o '(got to get you into my life))
+(letterwords 'o '(gone))
+(letterwords 'e '(this is real and you are completely unprepared))
 
 
 
