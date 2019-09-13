@@ -304,6 +304,26 @@
 (plural 'fly)
 (plural 'box)
 
+; 6.13
+
+(define (greet name)
+  (cond ((equal? (first name) 'professor)
+         (se '(i hope i am not bothering you) 'professor (last name)))
+        ((equal? (first name) 'queen)
+         (se '(hello your majesty)))
+        ((equal? (last name) 'livingstone)
+         (se '(dr livingstone i presume)))
+        ((equal? (first name) 'doctor)
+         (se '(hello dr) (bl name)))
+        (se '(good to see you) (first name))))
+
+(trace greet)
+
+(greet '(john lennon))
+(greet '(doctor marie curie))
+(greet '(doctor martin luther king jr))
+(greet '(queen elizabeth))
+(greet '(david livingstone))
 
 
 
