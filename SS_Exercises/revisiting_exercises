@@ -334,7 +334,19 @@
 (greet '(queen elizabeth))
 (greet '(david livingstone))
 
+; 8.4
 
+(define (vowel? sent)
+  (member? sent '(aeiou)))
+
+(
+
+(define (ends-vowel? wd) (vowel? (last wd)))
+
+(define (even-count? wd) (even? (count wd)))
+
+(choose-beatles ends-vowel?)
+(choose-beatles even-count?)
 
 
 
