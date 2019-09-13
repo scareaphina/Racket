@@ -314,8 +314,8 @@
         ((equal? (last name) 'livingstone)
          (se '(dr livingstone i presume)))
         ((equal? (first name) 'doctor)
-         (se '(hello dr) (bl name)))
-        (se '(good to see you) (first name))))
+         (se '(hello dr) (last (bl name))))
+        (else (se '(good to see you) (first name)))))
 
 (trace greet)
 
