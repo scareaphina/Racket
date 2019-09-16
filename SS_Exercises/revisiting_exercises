@@ -448,4 +448,14 @@
 (words 'unicorn)
 (words 3)
 
+; 8.7
+
+(define (letter-count sent)
+  (accumulate + (every count sent)))
+
+(letter-count '(fixing a hole))
+(letter-count 'bat)
+
+
+
 
