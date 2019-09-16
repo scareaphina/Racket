@@ -456,6 +456,23 @@
 (letter-count '(fixing a hole))
 (letter-count 'bat)
 
+(define (double n)
+  (* n 2))
 
+(define (hyperbole sent)
+  (cond ((equal? sent 'good) 'great)
+        ((equal? sent 'bad) 'terrible)
+        ((equal? sent 'hungry) 'starving)
+        ((equal? sent 'pretty) 'stunning)
+        ((equal? sent 'gros) 'repulsive)
+        ((equal? sent 'sick) 'dying)
+        ((number? sent) (double sent))
+        (else sent)))
+
+(define (exaggerate sent)
+  (every hyperbole sent))
+
+(exaggerate '(i ate 3 potstickers))
+(exaggerate '(the chow fun is good here))
 
 
