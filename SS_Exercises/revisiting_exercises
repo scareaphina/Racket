@@ -384,6 +384,17 @@
 (choose-beatles ends-vowel?)
 (choose-beatles even-count?)
 
+; 8.5
+
+(define (amazify name)
+  (word 'the-amazing- name))
+
+(define (transform-beatles procedure)
+  (every procedure '(john paul george ringo)))
+
+(transform-beatles amazify)
+(transform-beatles butfirst)
+
 ; 9.7
 
 (define (letterwords ltr wd)
