@@ -345,6 +345,18 @@
 (greet '(queen elizabeth))
 (greet '(david livingstone))
 
+; 6.14
+
+(define (describe-time time)
+  (cond ((> time 86400) (se (/ time 86400) 'days))
+        ((> time 3600) (se (/ time 3600) 'hours))
+        ((> time 60) (se (/ time 60) 'minutes))
+        (else (se time 'seconds))))
+
+(describe-time 45)
+(describe-time 930)
+(describe-time 30000000000)
+
 ; 8.4
 
 (define (vowel? sent)
