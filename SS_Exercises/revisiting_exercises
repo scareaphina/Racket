@@ -475,4 +475,13 @@
 (exaggerate '(i ate 3 potstickers))
 (exaggerate '(the chow fun is good here))
 
+; 8.10
 
+(define (true-for-all? factor sent)
+  (= (count sent) (count (keep factor sent))))
+
+(true-for-all? even? '(2 4 6 8))
+(true-for-all? even? '(2 6 3 4))
+
+(check-equal? (true-for-all? even? '(2 4 6 8)) #t)
+(check-equal? (true-for-all? even? '(2 6 3 4)) #f)
