@@ -306,16 +306,26 @@
 
 ; 6.13
 
+;(define (findlast name)
+;  (cond ((equal? (last name) 'jr)
+;         (se (bl name)))
+;        ((equal? (last name) 'ii)
+;         (se (bl name)))
+;        ((equal? (last name) 'iii)
+;         (se (bl name)))
+;        ((equal? (last name) 'sr)
+;         (se (bl name)))
+;        (se name)))
+
+; rewritten using if/or
+
 (define (findlast name)
-  (cond ((equal? (last name) 'jr)
-         (se (bl name)))
-        ((equal? (last name) 'ii)
-         (se (bl name)))
-        ((equal? (last name) 'iii)
-         (se (bl name)))
-        ((equal? (last name) 'sr)
-         (se (bl name)))
-        (se name)))
+  (if (or (equal? (last name) 'jr)
+          (equal? (last name) 'ii)
+          (equal? (last name) 'iii)
+          (equal? (last name) 'sr))
+      (se (bl name))
+      (se name)))
 
 (define (greet name)
   (cond ((equal? (first name) 'professor)
