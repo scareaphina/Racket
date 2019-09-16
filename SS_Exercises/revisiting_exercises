@@ -357,6 +357,18 @@
 (describe-time 930)
 (describe-time 30000000000)
 
+; 7.3
+
+; (define (superlative adjective word)
+;   (se (word adjective 'est) word))
+
+; can't use legit procedure names as part of a function like that. the computer will always evaluate "word" as it's defintion as a primative
+
+(define (superlative adjective wd)
+  (se (word adjective 'est) wd))
+
+(superlative 'dumb 'cat)
+
 ; 8.4
 
 (define (vowel? sent)
