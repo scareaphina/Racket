@@ -225,12 +225,13 @@
 ; 6.6
 
 (define (teen? age)
-  (cond ((<= age 19)
-         (>= age 13) #t)
-        (else '(you are an adult))))
+  (and (<= age 19)
+       (>= age 13)))
 
 (teen? 20)
 (teen? 14)
+(teen? 11)
+(teen? 19)
 
 ; 6.7
 
