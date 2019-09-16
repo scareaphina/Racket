@@ -371,14 +371,15 @@
 
 ; 8.4
 
-(define (vowel? sent)
-  (member? sent '(aeiou)))
+(define (vowel? wd)
+  (member? wd 'aeiou))
+(define (ends-vowel? wd)
+  (vowel? (last wd)))
+(define (even-count? wd)
+  (even? (count wd)))
 
-(
-
-(define (ends-vowel? wd) (vowel? (last wd)))
-
-(define (even-count? wd) (even? (count wd)))
+(define (choose-beatles function)
+  (keep function '(john paul george ringo)))
 
 (choose-beatles ends-vowel?)
 (choose-beatles even-count?)
