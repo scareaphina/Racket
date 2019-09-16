@@ -485,3 +485,25 @@
 
 (check-equal? (true-for-all? even? '(2 4 6 8)) #t)
 (check-equal? (true-for-all? even? '(2 6 3 4)) #f)
+
+; 8.12
+
+(define (count-ums sent)
+  (let ((is-um? (lambda (wd) (equal? wd 'um))))
+    (count (keep is-um? sent))))
+
+(trace count-ums)
+
+(count-ums
+ '(today um we are going to um talk about functional um programming))
+
+
+
+
+
+
+
+
+
+
+
