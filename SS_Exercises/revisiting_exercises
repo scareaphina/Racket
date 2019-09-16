@@ -253,7 +253,7 @@
 (define (indef-article sent)
   (if (vowel? (first sent))
       (se 'an sent)
-  (se 'a sent)))
+      (se 'a sent)))
 
 (indef-article 'beatle)
 (indef-article 'album)
