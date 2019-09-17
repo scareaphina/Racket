@@ -497,7 +497,23 @@
 (count-ums
  '(today um we are going to um talk about functional um programming))
 
+; 8.13
 
+(define (phone-alpha letter)
+  (cond ((member? letter 'abc) 2)
+        ((member? letter 'def) 3)
+        ((member? letter 'ghi) 4)
+        ((member? letter 'jkl) 5)
+        ((member? letter 'mno) 6)
+        ((member? letter 'pqrs) 7)
+        ((member? letter 'tuv) 8)
+        ((member? letter 'wxyz) 9)
+        (else 'huh?)))
+
+(define (phone-unspell wd)
+  (se (every phone-alpha wd)))
+
+(phone-unspell 'popcorn)
 
 
 
