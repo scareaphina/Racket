@@ -532,7 +532,13 @@
 (who '(did that))
 (who '(sucks))
 
+; 9.5
 
+(define (prepend-every addition sent)
+  (every (lambda (wd) (word addition wd)) sent))
+
+(prepend-every 's '(he aid he aid))
+(prepend-every 'anti '(dote pasto gone body))
 
 
 
