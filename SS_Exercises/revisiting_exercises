@@ -524,7 +524,13 @@
 (subword 'polythene 5 8)
 (subword 'unicorn 4 7)
 
+; 9.4
 
+(define (who sent)
+  (every (lambda (wd) (se wd sent)) '(pete roger john keith)))
+
+(who '(did that))
+(who '(sucks))
 
 
 
