@@ -573,3 +573,31 @@
 (hang 'potsticker 'etaoi)
 (hang 'elephant 'aeiou)
 (hang 'elephant 'tea)
+
+; 9.9
+
+(define (common-words first second)
+  (keep (lambda (wd) (member? wd second)) first))
+
+(common-words '(wicked and divine)
+              '(this is real and you are completely unprepared))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
