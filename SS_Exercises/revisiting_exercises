@@ -551,3 +551,10 @@
 ((sentence-version first) '(if i fell))
 ((sentence-version square) '(8 2 4 6))
 
+; 9.7
+
+(define (letterwords letter sent)
+  (keep (lambda (wd) (member? letter wd)) sent))
+
+(letterwords 'o '(got to get you into my life))
+(letterwords 'e '(this is real and you are completely unprepared))
