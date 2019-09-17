@@ -515,7 +515,14 @@
 
 (phone-unspell 'popcorn)
 
+; 8.14
 
+(define (subword wd start end)
+  ((repeated bl (- (count wd) end))
+   ((repeated bf (- start 1)) wd)))
+
+(subword 'polythene 5 8)
+(subword 'unicorn 4 7)
 
 
 
