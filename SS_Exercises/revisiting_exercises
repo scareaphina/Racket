@@ -558,3 +558,18 @@
 
 (letterwords 'o '(got to get you into my life))
 (letterwords 'e '(this is real and you are completely unprepared))
+
+; 9.8
+
+(define (hang-letter letter guesses)
+  (if (member? letter guesses)
+      letter
+      '(_)))
+
+(define (hang wd guesses)
+  (accumulate se
+              (every (lambda (sent) (hang-letter sent guesses)) wd)))
+
+(hang 'potsticker 'etaoi)
+(hang 'elephant 'aeiou)
+(hang 'elephant 'tea)
