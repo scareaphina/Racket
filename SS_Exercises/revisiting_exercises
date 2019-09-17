@@ -582,7 +582,14 @@
 (common-words '(wicked and divine)
               '(this is real and you are completely unprepared))
 
+; 9.10
 
+(define (appearances first second)
+  (count (keep (lambda (wd) (equal? first wd)) second)))
+
+(appearances 'a 'apple)
+(appearances 2 19482758020)
+(appearances 'this '(this is real and you are completely unprepared))
 
 
 
