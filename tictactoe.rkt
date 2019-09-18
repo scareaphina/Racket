@@ -30,3 +30,20 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
 ;        ((i-can-win-next-time?)
 ;         (prepare-win))
 ;        (else (whatever))))
+
+
+
+; the first step: triples
+
+; (1xo 4x6 o89 14o xx8 o69 1x9 oxo)
+; tells us everything we need to know about a board that looks like this:
+
+; 1 x o
+; 4 x 6
+; o 8 9
+
+; we can see the info in the diagram above, the sentence proceeding it, and also in this word:
+
+;_xo_x_o__
+
+; data can be displayed in multiple ways and the challenge is in finding what makes creating the program easiest
