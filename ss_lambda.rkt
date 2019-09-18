@@ -67,6 +67,8 @@
 
 ((same-arg-twice word) 'hello)
 
+; when we evaluate (same-arg-twice word), we substitute the procedure word for the formal parameter fn so the result is (lambda (arg) (word arg arg))
+
 ; 'hellohello
 
 ((same-arg-twice *) 4)
