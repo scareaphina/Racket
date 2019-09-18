@@ -345,3 +345,23 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
 (best-square "36o" (find-triples 'xo__x___o) 'o)
 (best-move '("78o" "36o") (find-triples 'xo__x___o) 'o)
 (i-can-advance? (find-triples 'xo__x___o) 'o)
+
+
+
+
+; leftovers
+
+; if all else fails, just pick a square. some are better than others! pick the center if it's free, then corner, then edge
+
+(define (best-free-square triples)
+  (first-choice (accumulate word triples)
+                '(5 1 3 7 9 2 4 6 8)))
+
+(define (first-choice possibilities preferences)
+  (first (keep (lambda (square) (member? square possibilities))
+               preferences)))
+
+(first-choice 123456789147258369159357 '(5 1 3 7 9 2 4 6 8))
+(first-choice "1xo4x6o8914oxx8o691x9oxo" '(5 1 3 7 9 2 4 6 8))
+(best-free-square (find-triples '_________))
+(best-free-square (find-triples '____x____))
