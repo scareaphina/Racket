@@ -165,3 +165,35 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
 
 (i-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'x)
 (i-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'o)
+
+
+
+; if so, in which square?
+
+; i can win can return true, but then we have to find the particular square that will win the game for us
+
+;(define (choose-winning-move triples me)
+;  (keep number? (first (keep (lambda (triple) (my-pair? triple me))
+;                             triples))))
+
+; kludgy solution, where cond accepts a clause containing a single expression instead of the usual two. so we can say the following where each cond invokes a semipredicate
+
+;(define (ttt-choose triples me)
+;  (cond ((i-can-win? triples me))
+;        ((opponent-can-win triples me))
+;        ...))
+
+; then we modify i-can-win? to have desired behavior
+
+(define (i-can-win? triples me)
+  (choose-win
+   (keep (lambda (triple) (my-pair? triple me))
+         triples)))
+
+(define (choose-win winning-triples)
+  (if (empty?  winning-triples)
+      #f
+      (keep number? (first winning-triples))))
+
+(i-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'x)
+(i-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'o)
