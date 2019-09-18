@@ -77,3 +77,5 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
   (if (equal? '_ (item square position))
       square
       (item square position)))
+
+; at this point, position is unbound, so we'll have to solve that
