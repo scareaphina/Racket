@@ -47,3 +47,33 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
 ;_xo_x_o__
 
 ; data can be displayed in multiple ways and the challenge is in finding what makes creating the program easiest
+
+
+
+; finding the triples
+
+; our program will start with this sentence of all the winning combinations:
+
+; (123 456 789 147 258 369 159 357)
+
+; and a position word such as _xo_x_o__ that will return a sentence of triples:
+
+; (1xo 4x6 o89 14o xx8 o69 1x9 oxo)
+
+; all that is necessary is to replace some of the numbers with xs and os
+
+(define (find-triples position)
+  (every substitute-triple '(123 456 789 147 258 369 159 357)))
+
+;(define (substitute-triple combination)
+;  (every (substitute-letter combination)))
+
+; but we want to return a word, so:
+
+(define (substitute-triple combination)
+  (accumulate word (every substitute-letter combination)))
+
+(define (substitute-letter square)
+  (if (equal? '_ (item square position))
+      square
+      (item square position)))
