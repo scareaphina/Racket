@@ -134,3 +134,34 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
         ((opponent-can-win? triples me)
          (block-opponent-win triples me))
         ...))
+
+
+
+; can the computer win on this move?
+
+; so we need a function that takes a word and a letter as arguments and counts how many times the letter appears in the word. for this we can use appearances.
+
+(appearances 'o 'oo7)
+(appearances 'x 'oo7)
+
+(define (my-pair? triple me)
+  (and (= (appearances me triple) 2)
+       (= (appearances (opponent me) triple) 0)))
+
+(define (opponent letter)
+  (if (equal? letter 'x) 'o 'x))
+
+(opponent 'x)
+(opponent 'o)
+
+(my-pair? 'oo7 'o)
+(my-pair? 'xo7 'o)
+(my-pair? 'oox 'o)
+
+(define (i-can-win? triples me)
+  (not (empty?
+        (keep (lambda (triple) (my-pair? triple me))
+              triples))))
+
+(i-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'x)
+(i-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'o)
