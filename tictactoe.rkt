@@ -2,6 +2,12 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
 
 ; tic tac toe
 
+; we number the squares of the board this way:
+
+; 1 - 2 - 3
+; 4 - 5 - 6
+; 7 - 8 - 9
+
 ; (ttt '__o_xox_x 'o)
 ; Here is a sample game:
 
