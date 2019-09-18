@@ -302,3 +302,46 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
 (keep (lambda (wd) (>= (count wd) 2))
       '("" "" 3 44 "" 6 77 "" ""))
 (every first '(44 77))
+
+
+
+
+; taking the offensive
+
+; the final version of ttt-chose with all clauses shown
+
+(define (ttt-chose triples me)
+  (cond ((i-can-win? triples me))
+        ((opponent-can-win? triples me))
+        ((i-can-fork? triples me))
+        ((i-can-advance? triples me))
+        (else (best-free-square triples))))
+
+(define (opponent-can-fork? triples me)
+  (i-can-fork? triples (opponent me)))
+
+(define (i-can-advance? triples me)
+  (best-move (keep (lambda (triple) (my-single? triple me)) triples)
+             triples
+             me))
+
+(define (best-move my-triples all-triples me)
+  (if (empty? my-triples)
+      #f
+      (best-square (first my-triples) all-triples me)))
+
+; best-move doe sthe same job as first-if-any, except it also invokes best-square on the first triple if there is one
+
+(define (best-square my-triple triples me)
+  (best-square-helper (pivots triples (opponent me))
+                      (keep-number? my-triple)))
+
+(define (best-square-helper opponent-pivots pair)
+  (if (member? (first pair) opponent-pivots)
+      (first pair)
+      (last pair)))
+
+(best-square "78o" (find-triples 'xo__x___o) 'o)
+(best-square "36o" (find-triples 'xo__x___o) 'o)
+(best-move '("78o" "36o") (find-triples 'xo__x___o) 'o)
+(i-can-advance? (find-triples 'xo__x___o) 'o)
