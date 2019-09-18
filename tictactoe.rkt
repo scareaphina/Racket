@@ -209,3 +209,17 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
 
 (opponent-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'x)
 (opponent-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'o)
+
+
+
+; now the strategy gets complicated
+
+; if we assume pivots as a function we can write in a moment, writing a function that returns two possible winning moves is straightforward
+
+(define (i-can-fork? triples me)
+  (first-if-any (pivots triples me)))
+
+(define (first-if-any sent)
+  (if (empty? sent)
+      #f
+      (first sent)))
