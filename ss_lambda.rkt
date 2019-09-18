@@ -123,17 +123,28 @@
 
 ; the truth about let
 
-(define (roots a b c)
-  (roots1 a b c (sqrt (- (* b b) (* 4 a c)))))
+;(define (roots a b c)
+;  (roots1 a b c (sqrt (- (* b b) (* 4 a c)))))
 
 (define (roots1 a b c discriminant)
   (se (/ (+ (- b) discriminant) (* 2 a))
       (/ (- (- b) discriminant) (* 2 a))))
 
+; created a new notation using let
+
+;(define (roots a b c)
+;  (let ((discriminant (sqrt (- (* b b) (* 4 a c)))))
+;    (se (/ (+ (- b) discriminant) (* 2 a))
+;        (/ (- (- b) discriminant) (* 2 a)))))
+
+; to avoid creating a named procedure that was only useful inside of the roots function
+; now we can use lambda for that
+
 (define (roots a b c)
-  (let ((discriminant (sqrt (- (* b b) (* 4 a c)))))
-    (se (/ (+ (- b) discriminant) (* 2 a))
-        (/ (- (- b) discriminant) (* 2 a)))))
+  ((lambda (discriminant)
+     (se (/ (+ (- b) discriminant) (* 2 a))
+         (/ (- (- b) discriminant) (* 2 a))))
+   (sqrt (- (* b b) (* 4 a c)))))
 
 ; name conflicts
 
