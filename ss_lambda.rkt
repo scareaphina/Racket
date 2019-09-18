@@ -86,33 +86,40 @@
 
 ; '(hello goodbye)
 
+; the truth about define
+
+; define's real job is to give a name to some value
+
 (define pi 3.141592654)
 
 (* pi 10)
-
-; 31.41592654
 
 (define drummer '(ringo starr))
 
 (first drummer)
 
-; ringo
+; when we say: 
 
-(define (square x) (* x x))
+;(define (square x) (* x x))
 
-(define square (lambda (x) (* x x)))
+; it's actually an abbreviation for
+
+; (define square (lambda (x) (* x x)))
+
+; here, the job of lambda is to create a procedure that multiplies its argument by itself, the job of define is to name that procedure square
+
+(define (same-arg-twice fn)
+  (lambda (arg) (fn arg arg)))
+
+; now that we know the whole truth about define, we can combine it with the function-creating functions in these past two chapters
 
 (define square (same-arg-twice *))
 
 (square 7)
 
-; 49
-
 (define forth-power (repeated square 2))
 
 (forth-power 5)
-
-; 625
 
 ; the truth about let
 
