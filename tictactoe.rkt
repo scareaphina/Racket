@@ -223,3 +223,82 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
   (if (empty? sent)
       #f
       (first sent)))
+
+
+
+; finding the pivots
+
+; pivots should return a sentence containing the pivot numbers. start with the triples
+
+; (xo3 4x6 78o x47 ox8 36o xxo 3x7)
+
+; keep the ones that have an x and two numbers
+
+; (4x6 x47 3x7)
+
+; mash those into one word
+
+;4x6x473x7
+
+; sort the digits into nine 'buckets,' one for each digit
+
+; ("" "" 3 44 "" 5 77 "" "")
+
+; we can see here that four and seven are the pivot squares, so we write procedures that carry out this plan. it has to find all the triples with one computer-owned square and two free squares, then extract the square numbers that appear in more than one triple
+
+; repeated-numbers takes a sentence of triples as its argument and returns a sentence of all the numbers that appear in more than one triple
+
+(define (repeated-numbers sent)
+  (every first
+         (keep (lambda (wd) (>= (count wd) 2))
+               (sort-digits (accumulate word sent)))))
+
+(define (pivots triples me)
+  (repeated-numbers (keep (lambda (triple) (my-single? triple me))
+                          triples)))
+
+(define (my-single? triple me)
+  (and (= (appearances me triple) 1)
+       (= (appearances (opponent me) triple) 0)))
+
+; my-single? is just like my-pair? except that it looks for one apeparance of the letter isntead of two
+
+(my-single? "4x6" 'x)
+(my-single? 'xo3 'x)
+(keep (lambda (triple) (my-single? triple 'x))
+      (find-triples 'xo__x___o))
+
+; we use accumulate word to make the triples into one long word, then look for the digits that appear more than once
+
+(accumulate word '("4x6" x47 "3x7"))
+
+; so now we find all the copies of a particular digit
+
+(define (extract-digit desired-digit wd)
+  (keep (lambda (wd-digit) (equal? wd-digit desired-digit)) wd))
+
+(extract-digit 7 "4x6x473x7")
+(extract-digit 2 "4x6x473x7")
+
+; now we want a sentence where the first word is all the 1s, the second word all the 2s, etc.
+
+(define (sort-digits number-word)
+  (every (lambda (digit) (extract-digit digit number-word))
+         '(1 2 3 4 5 6 7 8 9)))
+
+; sort-digit takes a word full of numbers and returns a sentence whose first word is all the ones, second is all the twos, etc.
+
+(sort-digits 123456789147258369159357)
+(sort-digits "4x6x473x7")
+
+; looking at repeated-numbers again
+
+(define (repeated-numbers sent)
+  (every first
+         (keep (lambda (wd) (>= (count wd) 2))
+               (sort-digits (accumulate word sent)))))
+
+(repeated-numbers '("4x6" x47 "3x7"))
+(keep (lambda (wd) (>= (count wd) 2))
+      '("" "" 3 44 "" 6 77 "" ""))
+(every first '(44 77))
