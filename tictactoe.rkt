@@ -197,3 +197,15 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
 
 (i-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'x)
 (i-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'o)
+
+
+
+; second verse, same as the first
+
+; have to deal with the possibility that the computer can't win on this move, but can win unless we block a triple
+
+(define (opponent-can-win? triples me)
+  (i-can-win? triples (opponent me)))
+
+(opponent-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'x)
+(opponent-can-win? '("1xo" "4x6" o89 "14o" xx8 o69 "1x9" oxo) 'o)
