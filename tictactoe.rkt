@@ -79,3 +79,58 @@ https://people.eecs.berkeley.edu/~bh/ssch10/ttt.html
       (item square position)))
 
 ; at this point, position is unbound, so we'll have to solve that
+
+
+
+; using every with two-argument procedures
+
+; we need to give substitute-letter access to position, so we bind it to the substitute-letter function thus:
+
+(define (substitute-letter square position)
+  (if (equal? '_ (item square position))
+      square
+      (item square position)))
+
+(substitute-letter 5 '_xo_x_o__)
+(substitute-letter 8 '_xo_x_o__)
+
+; so now we have to modify substitute-triple to invoke substitute-letter with two arguments
+
+; lambda to the rescue! this lambda takes a square as its argument and returns the contents of the position at that square
+
+; (lambda (square) (substitute-letter square position))
+
+; final version of subsitute-triple
+
+(define (substitute-triple combination position)
+  (accumulate word
+              (every (lambda (square)
+                       (substitute-letter square position))
+                     combination)))
+
+(substitute-triple 456 '_xo_x_o__)
+(substitute-triple 147 '_xo_x_o__)
+(substitute-triple 357 '_xo_x_o__)
+
+(define (find-triples position)
+  (every (lambda (comb) (substitute-triple comb position))
+         '(123 456 789 147 258 369 159 357)))
+
+(find-triples '_xo_x_o__)
+(find-triples 'x_____oxo)
+
+; so we've written these three procedures:
+
+; Substitute-letter  	finds the letter in a single square.
+; Substitute-triple	finds all three leters corresponding to three squares.
+; Find-triples	        finds all the letters in all eight winning combinations.
+
+(define (ttt position me)
+  (ttt-choose (find-triples position) me))
+
+(define (ttt-choose triples me)
+  (cond ((i-can-win? triples me)
+         (choose-winning-move triples me))
+        ((opponent-can-win? triples me)
+         (block-opponent-win triples me))
+        ...))
