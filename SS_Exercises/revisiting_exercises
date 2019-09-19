@@ -667,7 +667,27 @@
 
 (copies 8 'spam)
 
+; 12.5
 
+(define (hyperbole sent)
+  (cond ((equal? sent 'good) 'great)
+        ((equal? sent 'bad) 'terrible)
+        ((equal? sent 'tasty) 'delicous)
+        ((equal? sent 'tired) 'exhausted)
+        ((equal? sent 'sick) '(like death))
+        ((equal? sent 'enjoyable) '(the best thing ever))
+        ((equal? sent 'cute) '(so adorable i might die))
+        ((number? sent) (* sent 2))
+        (else sent)))
+
+(define (exaggerate sent)
+  (if (empty? sent)
+      '()
+      (se (hyperbole (first sent))
+          (exaggerate (bf sent)))))
+
+(exaggerate '(i ate 3 potstickers))
+(exaggerate '(the chow fun is good here))
 
 
 
