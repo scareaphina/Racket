@@ -833,7 +833,16 @@
 ;<'oughoutthray
 ;'oughoutthray
 
+; 14.1
 
+(define (remove-once wd sent)
+  (cond ((empty? sent) sent)
+        ((equal? (first sent) wd) (bf sent))
+        (else (se (first sent) (remove-once wd (bf sent))))))
+
+(trace remove-once)
+
+(remove-once 'morning '(good morning good morning))
 
 
 
