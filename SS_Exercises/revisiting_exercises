@@ -722,7 +722,19 @@
 
 ;;;;;;; coming back to this one. it's not working properly and i can't figure out exactly why...
 
+; 12.7
 
+(define (spell-digit digit)
+  (item (+ 1 digit)
+        '(zero one two three four five six seven eight nine)))
+
+(define (spell-number sent)
+  (if (empty? sent)
+      '()
+      (se (spell-digit (first sent))
+      (spell-number (bf sent)))))
+
+(spell-number 1971)
 
 
 
