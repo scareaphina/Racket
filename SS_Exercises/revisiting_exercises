@@ -751,7 +751,24 @@
 
 (numbers '(76 trombones and 110 cornets))
 
+; 12.9
 
+(define (real-word? wd)
+  (not (member? wd '(a the an in of and for to with))))
+
+(define (find-real-word sent)
+  (if (real-word? sent)
+      sent
+      '()))
+
+(define (real-words sent)
+  (if (empty? sent)
+      '()
+      (se (find-real-word (first sent))
+          (real-words (bf sent)))))
+
+(real-words '(witches are just cowboys with dominion over the night instead of the day))
+(real-words '(the feeling when you quote memes just to have something to say in a program))
 
 
 
