@@ -639,7 +639,15 @@
 
 (phone-unspell 'popcorn)
 
+; 11.5
 
+(define (initials sent)
+  (if (empty? sent)
+      '()
+      (se (first (first sent))
+          (initials (bf sent)))))
+
+(initials '(if i needed someone))
 
 
 
