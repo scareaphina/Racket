@@ -867,7 +867,15 @@
 
 (remdup '(ob la di ob la da))
 
+; 14.5
 
+(define (letter-count sent)
+  (if (empty? sent)
+      0
+      (+ (count (first sent))
+         (letter-count (bf sent)))))
+
+(letter-count '(fixing a hole))
 
 
 
