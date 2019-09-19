@@ -783,7 +783,15 @@
 (remove 'the '(witches are just cowboys with dominion over the night instead of the day))
 (remove 'memes '(the feeling when you quote memes just to have something to say in a program))
 
+; 12.11
 
+(define (count sent)
+  (if (empty? sent)
+      0
+      (+ 1 (count (bf sent)))))
+
+(count 'apple)
+(count '(witches are just cowboys with dominion over the night instead of the day))
 
 
 
