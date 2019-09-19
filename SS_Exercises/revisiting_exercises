@@ -770,7 +770,18 @@
 (real-words '(witches are just cowboys with dominion over the night instead of the day))
 (real-words '(the feeling when you quote memes just to have something to say in a program))
 
+; 12.10
 
+(define (remove wd sent)
+  (if (empty? sent)
+      sent
+      (se (if (equal? (first sent) wd)
+              '()
+              (first sent))
+          (remove wd (bf sent)))))
+
+(remove 'the '(witches are just cowboys with dominion over the night instead of the day))
+(remove 'memes '(the feeling when you quote memes just to have something to say in a program))
 
 
 
