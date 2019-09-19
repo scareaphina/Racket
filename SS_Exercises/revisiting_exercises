@@ -689,7 +689,38 @@
 (exaggerate '(i ate 3 potstickers))
 (exaggerate '(the chow fun is good here))
 
+; 12.6
 
+(define (base-grade g)
+  (let ((grade (first g)))
+    (cond ((equal? grade 'a) 4)
+          ((equal? grade 'b) 3)
+          ((equal? grade 'c) 2)
+          ((equal? grade 'd) 1)
+          ((equal? grade 'f) 0)
+          (else 0))))
+
+(define (grade-modifier grade)
+  (if (<= (count grade) 1)
+      0
+      (+ 0 (word (bf grade) 0.33))))
+
+(define (points grades)
+  (if (empty? grades)
+      0
+      (let ((f (first grades)))
+        (+ (+ (base-grade f)
+              (grade-modifier f))
+           (points (bf grades))))))
+
+(define (gpa grades)
+  (+ (points grades) (count grades)))
+
+(gpa '(A A+ B+ B))
+(gpa '(A A A A))
+(gpa '(B+ B C+ D))
+
+;;;;;;; coming back to this one. it's not working properly and i can't figure out exactly why...
 
 
 
