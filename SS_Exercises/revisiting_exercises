@@ -606,7 +606,17 @@
 
 (downup4 'paul)
 
+; 11.2
 
+(define (count-ums sent)
+  (if (equal? (count sent) 0)
+      0
+      (if (equal? 'um (first sent))
+          (+ 1 (count-ums (bf sent)))
+          (count-ums (bf sent)))))
+
+(count-ums
+ '(today um we are going to um talk about the combining um method))
 
 
 
