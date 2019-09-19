@@ -618,7 +618,26 @@
 (count-ums
  '(today um we are going to um talk about the combining um method))
 
+; 11.3
 
+(define (unspell-letter letter)
+  (cond ((member? letter 'abc) 2)
+        ((member? letter 'def) 3)
+        ((member? letter 'ghi) 4)
+        ((member? letter 'jkl) 5)
+        ((member? letter 'mno) 6)
+        ((member? letter 'prs) 7)
+        ((member? letter 'tuv) 8)
+        ((member? letter 'wxy) 9)
+        (else 0)))
+
+(define (phone-unspell wd)
+  (if (empty? wd)
+      '()
+      (se (unspell-letter (first wd))
+          (phone-unspell (bf wd)))))
+
+(phone-unspell 'popcorn)
 
 
 
