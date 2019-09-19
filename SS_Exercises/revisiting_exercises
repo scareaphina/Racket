@@ -888,7 +888,30 @@
 
 (differences '(4 23 9 87 6 12))
 
+; 14.8
 
+(define (repeat number wd)
+  (if (= number 0)
+      '()
+      (se wd (repeat (- number 1) wd))))
+
+(repeat 3 'apple)
+
+(define (expand sent)
+  (if (empty? sent)
+      sent
+      (let ((f (first sent))
+            (rest (bf sent)))
+        (if (and (number? f)
+                 (> (count sent) 1))
+            (se (repeat f (first rest))
+                (expand (bf rest)))
+            (se f (expand rest))))))
+
+(trace expand)
+
+(expand '(4 calling birds 3 french hens))
+(expand '(the 7 samurai))
 
 
 
