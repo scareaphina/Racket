@@ -649,6 +649,34 @@
 
 (initials '(if i needed someone))
 
+; 11.6
+
+(define (countdown number)
+  (if (= number 0)
+      'BLASTOFF!
+      (se number (countdown (- number 1)))))
+
+(countdown 10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
