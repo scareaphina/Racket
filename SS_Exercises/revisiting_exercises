@@ -736,7 +736,20 @@
 
 (spell-number 1971)
 
+; 12.8
 
+(define (number-finder sent)
+  (if (number? sent)
+      sent
+      '()))
+
+(define (numbers sent)
+  (if (empty? sent)
+      sent
+      (se (number-finder (first sent))
+          (numbers (bf sent)))))
+
+(numbers '(76 trombones and 110 cornets))
 
 
 
