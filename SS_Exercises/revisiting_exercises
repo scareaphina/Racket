@@ -844,7 +844,14 @@
 
 (remove-once 'morning '(good morning good morning))
 
+; 14.2
 
+(define (up sent)
+  (if (= (count sent) 1)
+      sent
+      (se (up (bl sent)) sent)))
+
+(up 'town)
 
 
 
