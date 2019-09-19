@@ -591,7 +591,20 @@
 (appearances 2 19482758020)
 (appearances 'this '(this is real and you are completely unprepared))
 
+; 11.1
 
+(define (downup4 wd)
+  (se wd
+      (bl wd)
+      (bl (bl wd))
+      (first wd)
+      (bl (bl wd))
+      (bl wd)
+      wd))
+
+(trace downup4)
+
+(downup4 'paul)
 
 
 
