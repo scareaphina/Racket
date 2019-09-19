@@ -815,6 +815,38 @@
 ;'(a p e)
 ;> 
 
+; 13.2
+
+(define (pigl wd)
+  (if (member? (first wd) 'aeiou)
+      (word wd 'ay)
+      (pigl (word (bf wd) (first wd)))))
+
+(trace pigl)
+
+(pigl 'throughout)
+
+;>(pigl 'throughout)
+;>(pigl 'hroughoutt)
+;>(pigl 'roughoutth)
+;>(pigl 'oughoutthr)
+;<'oughoutthray
+;'oughoutthray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
