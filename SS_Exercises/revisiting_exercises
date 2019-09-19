@@ -853,7 +853,19 @@
 
 (up 'town)
 
+; 14.3
 
+(define (remdup sent)
+  (if (empty? sent)
+      sent
+      (let ((rest (bf sent)))
+        (if (member? (first sent) rest)
+            (se (remdup rest))
+            (se (first sent) (remdup rest))))))
+
+(trace remdup)
+
+(remdup '(ob la di ob la da))
 
 
 
