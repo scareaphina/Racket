@@ -658,6 +658,14 @@
 
 (countdown 10)
 
+; 11.7
+
+(define (copies number wd)
+  (if (= number 0)
+      '()
+      (se wd (copies (- number 1) wd))))
+
+(copies 8 'spam)
 
 
 
